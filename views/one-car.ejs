@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    	<title>Cars for Sale: <%=item.name%></title>
+		<link rel="stylesheet" href="/style.css">
+	</head>
+	<body>
+		<a href="/"><h1>Cars for Sale</h1></a>
+		<dl>
+			<dt>Name</dt>
+			<dd><%=item.name%></dd>
+			<dt>Party</dt>
+			<dd><a href="/makes/<%=item.make%>"><%=item.make%></a></dd>
+			<% if (item.image) { %>
+			<dt>Image URL</dt>
+			<dd><img src="<%=item.image%>" alt="<%=item.model%>"></dd>
+			<% } %>
+		</dl>
+		<div class="control">
+			<h2>Update car</h2>
+			<form method="post" action="/cars/<%=item._id%>">
+        			<input type="hidden" name="_method" value="put">
+        			<!-- The line above tells the server to treat this as a PUT request. -->
+        			<label>Model-year: 
+          				<input name="item[name]" value="<%=item.name%>" type="text" required>
+       				</label>
+        			<label>Make: 
+          				<select name="item[make]" required>
+            					<% related_items.forEach(function(related_item) { %>
+            					<option value="<%=related_item._id%>"
+              						<% if (related_item._id === item.make) { %>selected<% } %>>
+              						<%=related_item.name%>
+           	 				</option>
+            					<% }); %>
+          				</select>
+        			</label>
+        			<label>Image:
+          				<input name="item[image]" value="<%=item.image%>" type="url" size="80">
+        			</label>
+        			<button>Update</button>
+      			</form>
+		</div>
+	</body>
+</html>
