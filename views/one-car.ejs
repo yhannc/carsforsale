@@ -12,7 +12,7 @@
 			<dt>Make</dt>
 			<dd><a href="/makes/<%=item.make%>"><%=item.make%></a></dd>
 			<% if (item.image) { %>
-			<dt>Image URL</dt>
+			<dt>Image</dt>
 			<dd><img src="<%=item.image%>" alt="<%=item.model%>"></dd>
 			<% } %>
 		</dl>
@@ -21,21 +21,36 @@
 			<form method="post" action="/cars/<%=item._id%>">
         			<input type="hidden" name="_method" value="put">
         			<!-- The line above tells the server to treat this as a PUT request. -->
-        			<label>Model-year: 
-          				<input name="item[name]" value="<%=item.name%>" type="text" required>
+                    <label>Name: 
+              			<input name="item[name]" value="<%=item.name%>" type="text" required>
+       				</label>
+                    <label>Model: 
+              			<input name="item[model]" value="<%=item.model%>" type="text" required>
+       				</label>
+                    <label>Model-year:       				   
+                        <select name="item[modelyear]" required>
+                    			<% for (var modelyears = 1990; modelyears <= 2012; modelyears = modelyears+1) {%>
+            					<option value="<%=modelyears%>"
+              						<% if (modelyears === Number(item.modelyear)) { %>selected<% } %>>
+              						<%=modelyears%>
+           	 				    </option>
+            					<% } %>
+          				</select>
        				</label>
         			<label>Make: 
           				<select name="item[make]" required>
-            					<% related_items.forEach(function(related_item) { %>
-            					<option value="<%=related_item._id%>"
-              						<% if (related_item._id === item.make) { %>selected<% } %>>
-              						<%=related_item.name%>
-           	 				</option>
+            					<%  related_items.forEach(function(related_items) { %>
+            					<option value="<%=related_items._id%>"
+              						<% if (related_items._id === item.make) { %>selected<% } %>>
+              						<%=related_items.name%>
+           	 				    </option>
             					<% }); %>
           				</select>
         			</label>
         			<label>Image:
-          				<input name="item[image]" value="<%=item.image%>" type="url" size="80">
+          				<input name="item[image]" value="<%=item.image%>" type="url" size="80"
+                            placeholder="http://www.image.com/car.jpeg>
+                        <input name="item[image]" type="file">
         			</label>
         			<button>Update</button>
       			</form>

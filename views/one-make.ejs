@@ -35,9 +35,23 @@
 			<form id="create-car" method="post" action="/cars/">
 				<input type="hidden" name="item[make]" value="<%=item._id%>">
 				<!-- The line above links the car to be created to this make. -->
-				<label>Car model-year: 
-					<input name="item[name]" type="text" required 
-						placeholder="Escape 2006">
+				<label>Car name
+                    <input name="item[name]" type="text" required 
+        				placeholder="model + model-year">
+                </label>
+                <label>Car model
+                    <input name="item[model]" type="text" required 
+    					placeholder="Escape">
+                </label>
+                <label>Car model-year: 
+				    <select name="item[modelyear]" required>
+                        	<% for (var modelyears = 1990; modelyears <= 2012; modelyears = modelyears+1) {%>
+            				<option value="<%=modelyears%>">
+              					<%=modelyears%>
+           	 				   </option>
+            				<% } %>
+          			</select>
+                </label>
 				<label>Car image:
 					<input name="item[image]" type="url" size="80"
 						placeholder="http://www.image.com/car.jpeg">
