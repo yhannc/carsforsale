@@ -11,6 +11,12 @@
 			<dd><%=item.name%></dd>
 			<dt>Make</dt>
 			<dd><a href="/makes/<%=item.make%>"><%=item.make%></a></dd>
+            <dt>Model</dt>
+            <dd><%=item.model%></dd>
+            <dt>Model-year</dt>
+            <dd><%=item.modelyear%></dd>
+            <dt>Price</dt>
+            <dd><%=item.price%></dd>
 			<% if (item.image) { %>
 			<dt>Image</dt>
 			<dd><img src="<%=item.image%>" alt="<%=item.model%>"></dd>
@@ -29,13 +35,16 @@
        				</label>
                     <label>Model-year:       				   
                         <select name="item[modelyear]" required>
-                    			<% for (var modelyears = 1990; modelyears <= 2012; modelyears = modelyears+1) {%>
+                    			<% for (var modelyears = 2012; modelyears >= 1990; modelyears = modelyears-1) {%>
             					<option value="<%=modelyears%>"
               						<% if (modelyears === Number(item.modelyear)) { %>selected<% } %>>
               						<%=modelyears%>
            	 				    </option>
             					<% } %>
           				</select>
+       				</label>
+                    <label>Price: 
+                  		<input name="item[price]" value="<%=item.price%>" type="text" required>
        				</label>
         			<label>Make: 
           				<select name="item[make]" required>
