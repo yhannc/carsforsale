@@ -22,7 +22,7 @@ var db = utils.connectToDatabase(USER_OR_GROUP_NAME);
 // pasting, and modifying these examples.
 
 ////////////////////////////////////////////////////////////////////////////////
-// Example of handling PUT to create or update a resource. /////////////////////
+// Handling PUT to create or update a make. ////////////////////////////////////
 // Here we create or update an item using the ID specified in the URI. /////////
 ////////////////////////////////////////////////////////////////////////////////
 app.put('/makes/:id',      // TODO: change to suit your URI design.
@@ -68,6 +68,60 @@ app.get('/makes/',         // TODO: change to suit your URI design.
       else {
         res.render(
           'list-makes',   // TODO: change to the name of your HTML template.
+          { items: items }
+        );
+      }
+    });
+  }
+);
+
+////////////////////////////////////////////////////////////////////////////////
+// Handling PUT to create or update a model. ///////////////////////////////////
+// Here we create or update an item using the ID specified in the URI. /////////
+////////////////////////////////////////////////////////////////////////////////
+app.put('/models/:id',      // TODO: change to suit your URI design.
+  function(req, res) {
+  
+    // Get the item ID from the URI.
+    var item_id = req.params.id;
+
+    // Get the item info that was PUT from the input form.
+    // See the form in `views/list-makes.ejs`.
+    var item = req.body.item;
+    
+    item.type = 'model'; // TODO: change to the type of item you want
+
+    // Save the new item to the database, specifying the ID.
+    db.save(item_id, item, function(err) {
+
+      // If there was a database error, return an error status.
+      if (err) { res.send(err, 500); } 
+      
+      // Otherwise, redirect back to the URI from which the form was submitted.
+      else { res.redirect('back' ); }
+    });
+  }
+);
+
+////////////////////////////////////////////////////////////////////////////////
+// Example of handling GET of a "collection" resource. /////////////////////////
+// Here we list all items of type `model`. /////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+app.get('/models/',         // TODO: change to suit your URI design. 
+  function(req, res) {
+
+    var item_type = 'model'; // TODO: change to the type of item you want.
+
+    // Get all items of the specified type from the database.
+    db.getAll(item_type, function(err, items) {
+
+      // If there was a database error, return an error status.
+      if (err) { res.send(err, 500); } 
+
+      // Otherwise, use the returned data to render an HTML page.
+      else {
+        res.render(
+          'list-models',   // TODO: change to the name of your HTML template.
           { items: items }
         );
       }
