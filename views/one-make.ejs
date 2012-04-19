@@ -36,7 +36,7 @@
     				onsubmit="return onFormSubmit(this);">
 				<!-- The line above dynamically sets the PUT destination when the -->
 				<!-- form is submitted. -------------------------------------------->
-				<input type="hidden" name="_method" value="put">
+				<input type="hidden" name="item[make]" value="<%=item._id%>">
 				<!-- The line above tells the server to treat this as a PUT request. -->
     			<label>Model ID
                     <input name="item[id]" type="text" required 
@@ -47,13 +47,7 @@
         				placeholder="Escape">
                 </label>
         		<label>Make
-                    <select name="item[make]" required>
-                    			<%  items.forEach(function(items) { %>
-            					<option value="<%=items._id%>">
-              						<%=items.name%>
-           	 				    </option>
-            					<% }); %>
-          			</select>
+                    
                 </label>
 				<label>Model image:
 					<input name="item[image]" type="url" size="80"
