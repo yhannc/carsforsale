@@ -34,10 +34,24 @@
 					(lowercase letters only, no spaces):
 					<input name="item[id]" type="text" pattern="[a-z]+" required
 						placeholder="ford">
+					<select name="item[id]">
+						<%  items.forEach(function(item) { %>
+						<option value="<%=item._id%>">
+						<%=item._id%>
+						</option>
+						<% }); %>
+					</select>
 				</label>
 				<label>Make name: 
 					<input name="item[name]" type="text" required
 						placeholder="Ford">
+					<select name="item[name]">
+						<%  items.forEach(function(item) { %>
+						<option value="<%=item._id%>">
+						<%=item.name%>
+						</option>
+						<% }); %>
+					</select>
 				</label>
 				<label>Make description:
 					<textarea name="item[description]" cols="20" rows="10" 
