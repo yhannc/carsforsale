@@ -77,7 +77,7 @@ app.put('/models/:id',      // TODO: change to suit your URI design.
 );
 
 ////////////////////////////////////////////////////////////////////////////////
-// Example of handling POST to create a resource. //////////////////////////////
+// Example of handling POST to create a car. ///////////////////////////////////
 // Here we create an item and allow the ID to be created automatically. ////////
 ////////////////////////////////////////////////////////////////////////////////
 app.post('/cars/', // TODO: change to suit your URI design.
@@ -102,7 +102,7 @@ app.post('/cars/', // TODO: change to suit your URI design.
 );
 
 ////////////////////////////////////////////////////////////////////////////////
-// Another example of handling PUT to update a resource. ///////////////////////
+// Another example of handling PUT to update a car. ////////////////////////////
 // Here we update an item using the ID specified in the URI. ///////////////////
 ////////////////////////////////////////////////////////////////////////////////
 app.put('/cars/:id', // TODO: change to suit your URI design.
@@ -130,7 +130,7 @@ app.put('/cars/:id', // TODO: change to suit your URI design.
 );
 
 ////////////////////////////////////////////////////////////////////////////////
-// Example of handling GET of a "collection" resource. /////////////////////////
+// Example of handling GET of a "collection" of makes. /////////////////////////
 // Here we list all items of type `make`. //////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 app.get('/makes/',         // TODO: change to suit your URI design. 
@@ -156,7 +156,7 @@ app.get('/makes/',         // TODO: change to suit your URI design.
 );
 
 ////////////////////////////////////////////////////////////////////////////////
-// Example of handling GET of a "collection" resource. /////////////////////////
+// Example of handling GET of a "collection" of models. ////////////////////////
 // Here we list all items of type `model`. /////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 app.get('/models/',         // TODO: change to suit your URI design. 
@@ -182,7 +182,7 @@ app.get('/models/',         // TODO: change to suit your URI design.
 );
 
 ////////////////////////////////////////////////////////////////////////////////
-// Another example of handling GET of a "collection" resource. /////////////////
+// Another example of handling GET of a "collection" of cars. //////////////////
 // This time we support filtering the list by some criteria (i.e. searching). //
 ////////////////////////////////////////////////////////////////////////////////
 app.get('/cars/',          // TODO: change to suit your URI design. 
@@ -210,7 +210,7 @@ app.get('/cars/',          // TODO: change to suit your URI design.
 ////////////////////////////////////////////////////////////////////////////////
 // An example of handling GET of a single make. ////////////////////////////////
 // This handler is more complicated, because we want to show not only the //////
-// item requested, but also links to a set of related items. ///////////////////
+// item requested, but also links to a set of related models. //////////////////
 ////////////////////////////////////////////////////////////////////////////////
 app.get('/makes/:id',      // TODO: change to suit your URI design.
   function(req, res) {
@@ -287,7 +287,7 @@ app.get('/models/:id',      // TODO: change to suit your URI design.
         
 
         // Set our query to find the items related to the requested item.
-        req.query.make = item_id; // TODO: change `party` to reflect the
+        req.query.model = item_id; // TODO: change `party` to reflect the
                                    // relation between the item fetched above
                                    // and the related items to be fetched below.
 
