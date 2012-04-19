@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
-	<head> 
-    	<title>Cars for Sale: Makes</title>
+	<head>
+		<title>Cars for Sale: Makes</title>
 		<link rel="stylesheet" href="/style.css">
 	</head>
 	<body>
@@ -19,13 +19,13 @@
 			<h2>Add or update a new make</h2>
 			<script>
 			function onFormSubmit(form) {
-				form.action = form.action + form.elements['item[id]'].value;
+			form.action = form.action + form.elements['item[id]'].value;
 				console.log(form.action);
 				return true;
 			} 
 			</script>
 			<form id="create-make" method="post" action="/makes/" 
-					onsubmit="return onFormSubmit(this);">
+				onsubmit="return onFormSubmit(this);">
 				<!-- The line above dynamically sets the PUT destination when the -->
 				<!-- form is submitted. -------------------------------------------->
 				<input type="hidden" name="_method" value="put">

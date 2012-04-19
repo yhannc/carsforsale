@@ -32,11 +32,11 @@
 		</dl>
 		<div class="control">
 			<h2>Add or update a car model</h2>
-			<form id="create-make" method="post" action="/models/" 
+			<form id="create-model" method="post" action="/models/" 
     				onsubmit="return onFormSubmit(this);">
 				<!-- The line above dynamically sets the PUT destination when the -->
 				<!-- form is submitted. -------------------------------------------->
-				<input type="hidden" name="item[make]" value="<%=item._id%>">
+				<input type="hidden" name="_method" value="put">
 				<!-- The line above tells the server to treat this as a PUT request. -->
     			<label>Model ID
                     <input name="item[id]" type="text" required 

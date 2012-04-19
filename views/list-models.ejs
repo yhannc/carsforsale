@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-        <title>Cars for Sale: Models</title>
+		<title>Cars for Sale: Models</title>
 		<link rel="stylesheet" href="/style.css">
 	</head>
 	<body>
@@ -19,16 +19,16 @@
 			<h2>Search for models</h2>
 			<form method="get" action="/models/">
         			<label>Car model: 
-                        <select name="model" required>
+					<select name="model" required>
                 				<%  items.forEach(function(items) { %>
             					<option value="<%=items._id%>">
               						<%=items.name%>
-           	 				    </option>
+           	 				</option>
             					<% }); %>
           				</select>
-                    </label>
+				</label>
         			<button>Search</button>
-     			 </form>
+     			</form>
 		</div>
 	</body>
 </html>
