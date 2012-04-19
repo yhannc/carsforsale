@@ -31,7 +31,7 @@
 				<input type="hidden" name="_method" value="put">
 				<!-- The line above tells the server to treat this as a PUT request. -->
 				<label>Make ID<br>
-					(lowercase letters only, no spaces):
+					(lowercase letters only, no spaces):<br>
 					<input name="item[id]" type="text" pattern="[a-z]+" required
 						placeholder="ford">
 					<select name="item[id]">
@@ -42,7 +42,7 @@
 						<% }); %>
 					</select>
 				</label>
-				<label>Make name: 
+				<label>Make name:<br> 
 					<input name="item[name]" type="text" required
 						placeholder="Ford">
 					<select name="item[name]">
