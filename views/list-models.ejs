@@ -1,6 +1,6 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
-    <head> 
+	<head>
         <title>Cars for Sale: Models</title>
 		<link rel="stylesheet" href="/style.css">
 	</head>
@@ -13,39 +13,22 @@
 			<% }); %>
 		</ul>
 		<% } else { %>
-		<div>No models have been added.</div>
+		<div>No models found.</div>
 		<% } %>
 		<div class="control">
-			<h2>Add or update a new model</h2>
-			<script>
-			function onFormSubmit(form) {
-				form.action = form.action + form.elements['item[id]'].value;
-				console.log(form.action);
-				return true;
-			} 
-			</script>
-			<form method="post" action="/models/" 
-					onsubmit="return onFormSubmit(this);">
-				<!-- The line above dynamically sets the PUT destination when the -->
-				<!-- form is submitted. -------------------------------------------->
-				<input type="hidden" name="_method" value="put">
-				<!-- The line above tells the server to treat this as a PUT request. -->
-				<label>Model ID<br>
-					(lowercase letters only, no spaces):
-					<input name="item[id]" type="text" pattern="[a-z]+" required
-						placeholder="escape">
-				</label>
-				<label>Model name: 
-					<input name="item[name]" type="text" required
-						placeholder="Escape">
-				</label>
-				<label>Model description:
-					<textarea name="item[description]" cols="20" rows="10" 
-						placeholder="description of the model">
-					</textarea>
-				</label>
-				<button>Add or update</button>
-			</form>
+			<h2>Search for models</h2>
+			<form method="get" action="/models/">
+        			<label>Car model: 
+                        <select name="model" required>
+                				<%  items.forEach(function(items) { %>
+            					<option value="<%=items._id%>">
+              						<%=items.name%>
+           	 				    </option>
+            					<% }); %>
+          				</select>
+                    </label>
+        			<button>Search</button>
+     			 </form>
 		</div>
-	</body>	
+	</body>
 </html>

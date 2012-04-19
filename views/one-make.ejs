@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
-    <head> 
-		<title>Cars for Sale: <%=item.name%></title>
+	<head> 
+    	<title>Cars for Sale: <%=item.name%></title>
 		<link rel="stylesheet" href="/style.css">
 	</head>
 	<body>
@@ -13,52 +13,51 @@
 			<dt>Description</dt>
 			<dd><%=item.description%></dd>
 			<% } %>
-			<dt>Cars</dt>
+			<dt>Models</dt>
 			<dd>
 				<% if (related_items.length > 0) { %>
 				<ul>
 					<% related_items.forEach(function(related_item) { %>
 					<li>
-						<a href="/cars/<%=related_item._id%>">
+						<a href="/models/<%=related_item._id%>">
 							<%=related_item.name%>
 						</a>
 					</li>
 					<% }); %>
 				</ul>
 				<% } else { %>
-				No cars have been added.
+				No models have been added.
 				<% } %>
 			</dd>
 		</dl>
 		<div class="control">
-			<h2>Add a new used car for sale</h2>
-			<form id="create-car" method="post" action="/cars/">
-				<input type="hidden" name="item[make]" value="<%=item._id%>">
-				<!-- The line above links the car to be created to this make. -->
-				<label>Car name
+			<h2>Add or update a car model</h2>
+			<form id="create-make" method="post" action="/models/" 
+    				onsubmit="return onFormSubmit(this);">
+				<!-- The line above dynamically sets the PUT destination when the -->
+				<!-- form is submitted. -------------------------------------------->
+				<input type="hidden" name="_method" value="put">
+				<!-- The line above tells the server to treat this as a PUT request. -->
+    			<label>Model ID
+                    <input name="item[id]" type="text" required 
+        				placeholder="escape">
+                </label>
+				<label>Model name
                     <input name="item[name]" type="text" required 
-        				placeholder="model + model-year">
+        				placeholder="Escape">
                 </label>
-                <label>Car model
-                    <input name="item[model]" type="text" required 
-    					placeholder="Escape">
-                </label>
-                <label>Car model-year: 
-				    <select name="item[modelyear]" required>
-                        	<% for (var modelyears = 2012; modelyears >= 1990; modelyears = modelyears-1) {%>
-            				<option value="<%=modelyears%>">
-              					<%=modelyears%>
-           	 				   </option>
-            				<% } %>
+        		<label>Make
+                    <select name="item[make]" required>
+                    			<%  items.forEach(function(items) { %>
+            					<option value="<%=items._id%>">
+              						<%=items.name%>
+           	 				    </option>
+            					<% }); %>
           			</select>
                 </label>
-                <label>Car price
-                    <input name="item[price]" type="number" required 
-        				placeholder="$9,000">
-                </label>
-				<label>Car image:
+				<label>Model image:
 					<input name="item[image]" type="url" size="80"
-						placeholder="http://www.image.com/car.jpeg">
+						placeholder="http://www.image.com/model.jpg">
 					<input name="item[image]" type="file">
 				</label>
 				<button>Add</button>

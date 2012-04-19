@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html>
+  <head> 
+      <title>Cars for Sale: <%=item.name%></title>
+		<link rel="stylesheet" href="/style.css">
+	</head>
+	<body>
+		<a href="/"><h1>Cars for Sale</h1></a>
+		<dl>
+			<dt>Model name</dt>
+			<dd><%=item.name%></dd>
+			<% if (item.description) { %>
+			<dt>Description</dt>
+			<dd><%=item.description%></dd>
+			<% } %>
+			<dt>Cars</dt>
+			<dd>
+				<% if (related_items.length > 0) { %>
+				<ul>
+					<% related_items.forEach(function(related_item) { %>
+					<li>
+						<a href="/cars/<%=related_item._id%>">
+							<%=related_item.name%>
+						</a>
+					</li>
+					<% }); %>
+				</ul>
+				<% } else { %>
+				No cars have been added.
+				<% } %>
+			</dd>
+		</dl>
+		<div class="control">
+			<h2>Add a new used car for sale</h2>
+			<form id="create-car" method="post" action="/cars/">
+				<input type="hidden" name="item[model]" value="<%=item._id%>">
+				<!-- The line above links the car to be created to this model. -->
+                <label>Car model-year: 
+				    <select name="item[modelyear]" required>
+                        	<% for (var modelyears = 2012; modelyears >= 1990; modelyears = modelyears-1) {%>
+            				<option value="<%=modelyears%>">
+              					<%=modelyears%>
+           	 				   </option>
+            				<% } %>
+          			</select>
+                </label>
+                <label>Car price
+                    <input name="item[price]" type="number" required min="3000" step="100" value="5000"
+        				placeholder="9,000">
+                </label>
+				<label>Car image:
+					<input name="item[image]" type="url" size="80"
+						placeholder="http://www.image.com/car.jpeg">
+					<input name="item[image]" type="file">
+				</label>
+				<button>Add</button>
+			</form>
+		</div>
+	</body>
+</html>
