@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
-	<head> 
-    	<title>Cars for Sale: <%=item.name%></title>
+	<head>
+		<title>Cars for Sale: <%=item.name%></title>
 		<link rel="stylesheet" href="/style.css">
 	</head>
 	<body>
@@ -32,29 +32,35 @@
 		</dl>
 		<div class="control">
 			<h2>Add or update a car model</h2>
+			<script>
+			function onFormSubmit(form) {
+				form.action = form.action + form.elements['item[id]'].value;
+				console.log(form.action);
+				return true;
+			} 
+			</script>
 			<form id="create-model" method="post" action="/models/" 
     				onsubmit="return onFormSubmit(this);">
 				<!-- The line above dynamically sets the PUT destination when the -->
 				<!-- form is submitted. -------------------------------------------->
 				<input type="hidden" name="_method" value="put">
 				<!-- The line above tells the server to treat this as a PUT request. -->
-    			<label>Model ID
-                    <input name="item[id]" type="text" required 
-        				placeholder="escape">
-                </label>
+	    			<label>Model ID
+					<input name="item[id]" type="text" required 
+	        				placeholder="escape">
+				</label>
 				<label>Model name
-                    <input name="item[name]" type="text" required 
-        				placeholder="Escape">
-                </label>
-        		<label>Make
-                    
-                </label>
+					<input name="item[name]" type="text" required 
+	        				placeholder="Escape">
+				</label>
+	        		<label>Make:
+				</label>
 				<label>Model image:
 					<input name="item[image]" type="url" size="80"
 						placeholder="http://www.image.com/model.jpg">
 					<input name="item[image]" type="file">
 				</label>
-				<button>Add</button>
+				<button>Add or update</button>
 			</form>
 		</div>
 	</body>
