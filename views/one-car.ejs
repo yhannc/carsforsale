@@ -13,7 +13,7 @@
 			<dd><a href="/models/<%=item.model%>"><%=item.model%></a></dd>
 			<% if (item.image) { %>
 			<dt>Image</dt>
-			<dd><img src="<%=item.image%>" alt="<%=item.model-year%>-<%=item.model%>"></dd>
+			<dd><img src="<%=item.image%>" alt="<%=item.model%>"></dd>
 			<% } %>
 		</dl>
 		<div class="control">
@@ -26,10 +26,10 @@
        				</label>
         			<label>Car Model: 
           				<select name="item[model]" required>
-            					<%  related_items.forEach(function(related_items) { %>
-            					<option value="<%=related_items._id%>"
-              						<% if (related_items._id === item.model) { %>selected<% } %>>
-              						<%=related_items.name%>
+            					<%  related_items.forEach(function(related_item) { %>
+            					<option value="<%=related_item._id%>"
+              						<% if (related_item._id === item.model) { %>selected<% } %>>
+              						<%=related_item.name%>
            	 				</option>
             					<% }); %>
           				</select>
