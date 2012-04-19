@@ -165,7 +165,7 @@ app.get('/models/',         // TODO: change to suit your URI design.
     var item_type = 'model'; // TODO: change to the type of item you want.
 
     // Get all items of the specified type from the database.
-    db.getAll(item_type, function(err, items) {
+    db.getSome(item_type, req.query, function(err, items) {
 
       // If there was a database error, return an error status.
       if (err) { res.send(err, 500); } 
