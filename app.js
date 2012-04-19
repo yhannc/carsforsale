@@ -1,5 +1,4 @@
-
-var USER_OR_GROUP_NAME = 'yhannc'; // TODO: Insert GitHub username or group name.
+var USER_OR_GROUP_NAME = 'test'; // TODO: Insert GitHub username or group name.
 
 ////////////////////////////////////////////////////////////////////////////////
 
