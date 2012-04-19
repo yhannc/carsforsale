@@ -61,6 +61,13 @@
 				<label>Model name:
 					<input name="item[name]" type="text" required 
 	        				placeholder="Escape">
+					<select name="item[name]">
+						<%  related_items.forEach(function(related_item) { %>
+						<option value="<%=related_item._id%>">
+						<%=related_item.name%>
+						</option>
+						<% }); %>
+					</select>
 				</label>
 				<label>Model image:
 					<input name="item[image]" type="url" size="80"
