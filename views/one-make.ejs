@@ -55,16 +55,6 @@
 					<input name="item[name]" type="text" required 
 	        				placeholder="Escape">
 				</label>
-	        		<label>Make:
-					<select name="item[make]" type="text" required
-						placeholder="ford">
-						<%  items.forEach(function(item) { %>
-						<option value="<%=item._id%>">
-						<%=item._id%>
-						</option>
-						<% }); %>
-					</select>
-				</label>
 				<label>Model image:
 					<input name="item[image]" type="url" size="80"
 						placeholder="http://www.image.com/model.jpg">
