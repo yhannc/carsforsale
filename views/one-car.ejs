@@ -9,35 +9,31 @@
 		<dl>
 			<dt>Car name</dt>
 			<dd><%=item.name%></dd>
-			<% if (item.description) { %>
-			<dt>Description</dt>
-			<dd><%=item.description%></dd>
+			<dt>Car model</dt>
+			<dd><a href="/models/<%=item.model%>"><%=item.model%></a></dd>
+			<% if (item.image) { %>
+			<dt>Image</dt>
+			<dd><img src="<%=item.image%>" alt="<%=item.model-year%>-<%=item.model%>"></dd>
 			<% } %>
-			<dt>Cars</dt>
-			<dd>
-				<% if (related_items.length > 0) { %>
-				<ul>
-					<% related_items.forEach(function(related_item) { %>
-					<li>
-						<a href="/cars/<%=related_item._id%>">
-							<%=related_item.name%>
-						</a>
-					</li>
-					<% }); %>
-				</ul>
-				<% } else { %>
-				No cars have been added.
-				<% } %>
-			</dd>
 		</dl>
 		<div class="control">
 			<h2>Update car</h2>
     			<form method="post" action="/cars/<%=item._id%>">
         			<input type="hidden" name="_method" value="put">
         			<!-- The line above tells the server to treat this as a PUT request. -->
-				<label>Car model: 
-              				<input name="item[model]" value="<%=item.model%>" type="text" required>
+				<label>Car name: 
+                  			<input name="item[name]" value="<%=item.name%>" type="text" required>
        				</label>
+        			<label>Car Model: 
+          				<select name="item[model]" required>
+            					<%  related_items.forEach(function(related_items) { %>
+            					<option value="<%=related_items._id%>"
+              						<% if (related_items._id === item.model) { %>selected<% } %>>
+              						<%=related_items.name%>
+           	 				</option>
+            					<% }); %>
+          				</select>
+        			</label>
 				<label>Car model-year:       				   
 					<select name="item[modelyear]" required>
                     				<% for (var modelyears = 2012; modelyears >= 1990; modelyears = modelyears-1) {%>
@@ -49,18 +45,8 @@
           				</select>
        				</label>
 				<label>Price: 
-                  			<input name="item[price]" value="<%=item.price%>" type="number" required>
+                  			<input name="item[price]" value="<%=item.price%>" type="number" min="3000" step="100" required>
        				</label>
-        			<label>Make: 
-          				<select name="item[make]" required>
-            					<%  related_items.forEach(function(related_items) { %>
-            					<option value="<%=related_items._id%>"
-              						<% if (related_items._id === item.make) { %>selected<% } %>>
-              						<%=related_items.name%>
-           	 				</option>
-            					<% }); %>
-          				</select>
-        			</label>
         			<label>Image:
           				<input name="item[image]" value="<%=item.image%>" type="url" size="80"
 						placeholder="http://www.image.com/car.jpeg>
