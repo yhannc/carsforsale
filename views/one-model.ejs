@@ -10,8 +10,12 @@
 			<dt>Model name</dt>
 			<dd><%=item.name%></dd>
 			<% if (item.description) { %>
-			<dt>Description</dt>
+			<dt>Model description</dt>
 			<dd><%=item.description%></dd>
+			<% } %>
+			<% if (item.image) { %>
+			<dt>Model image</dt>
+			<dd><img src="<%=item.image%>" alt="<%=item.name%>"></dd>
 			<% } %>
 			<dt>Cars</dt>
 			<dd>
@@ -48,7 +52,7 @@
             					<% } %>
           				</select>
 				</label>
-				<label>Car price
+				<label>Car price:<br>$
 					<input name="item[price]" type="number" min="3000" step="100" value="5000" required
 						placeholder="9,000">
 				</label>
