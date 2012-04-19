@@ -25,10 +25,10 @@
     			<form method="post" action="/cars/<%=item._id%>">
         			<input type="hidden" name="_method" value="put">
         			<!-- The line above tells the server to treat this as a PUT request. -->
-				<label>Car name: 
+				<label>Car name:<br> 
                   			<input name="item[name]" value="<%=item.name%>" type="text" required>
        				</label>
-        			<label>Car Model: 
+        			<label>Car model: 
           				<select name="item[model]" required>
             					<%  related_items.forEach(function(related_item) { %>
             					<option value="<%=related_item._id%>"
@@ -51,7 +51,7 @@
 				<label>Price: 
                   			<input name="item[price]" value="<%=item.price%>" type="number" min="3000" step="100" required>
        				</label>
-        			<label>Image:
+        			<label>Image:<br>
           				<input name="item[image]" value="<%=item.image%>" type="url" size="80"
 						placeholder="http://www.image.com/car.jpeg>
 					<input name="item[image]" value="<%=item.image%>" type="file">
