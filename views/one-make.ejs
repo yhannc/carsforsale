@@ -45,6 +45,7 @@
 				<!-- form is submitted. -------------------------------------------->
 				<input type="hidden" name="_method" value="put">
 				<!-- The line above tells the server to treat this as a PUT request. -->
+				<input type="hidden" name="item[make]" value="<%=item._id%>">
 	    			<label>Model ID
 					<input name="item[id]" type="text" required 
 	        				placeholder="escape">
