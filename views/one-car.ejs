@@ -1,13 +1,13 @@
 <!DOCTYPE HTML>
 <html>
-	<head> 
-        <title>Cars for Sale: <%=item.name%></title>
+	<head>
+		<title>Cars for Sale: <%=item.name%></title>
 		<link rel="stylesheet" href="/style.css">
 	</head>
 	<body>
 		<a href="/"><h1>Cars for Sale</h1></a>
 		<dl>
-			<dt>Model name</dt>
+			<dt>Car name</dt>
 			<dd><%=item.name%></dd>
 			<% if (item.description) { %>
 			<dt>Description</dt>
@@ -32,24 +32,24 @@
 		</dl>
 		<div class="control">
 			<h2>Update car</h2>
-    		<form method="post" action="/cars/<%=item._id%>">
+    			<form method="post" action="/cars/<%=item._id%>">
         			<input type="hidden" name="_method" value="put">
         			<!-- The line above tells the server to treat this as a PUT request. -->
-                    <label>Car model: 
-              			<input name="item[model]" value="<%=item.model%>" type="text" required>
+				<label>Car model: 
+              				<input name="item[model]" value="<%=item.model%>" type="text" required>
        				</label>
-                    <label>Car model-year:       				   
-                        <select name="item[modelyear]" required>
-                    			<% for (var modelyears = 2012; modelyears >= 1990; modelyears = modelyears-1) {%>
+				<label>Car model-year:       				   
+					<select name="item[modelyear]" required>
+                    				<% for (var modelyears = 2012; modelyears >= 1990; modelyears = modelyears-1) {%>
             					<option value="<%=modelyears%>"
               						<% if (modelyears === Number(item.modelyear)) { %>selected<% } %>>
               						<%=modelyears%>
-           	 				    </option>
+						</option>
             					<% } %>
           				</select>
        				</label>
-                    <label>Price: 
-                  		<input name="item[price]" value="<%=item.price%>" type="number" required>
+				<label>Price: 
+                  			<input name="item[price]" value="<%=item.price%>" type="number" required>
        				</label>
         			<label>Make: 
           				<select name="item[make]" required>
@@ -57,15 +57,15 @@
             					<option value="<%=related_items._id%>"
               						<% if (related_items._id === item.make) { %>selected<% } %>>
               						<%=related_items.name%>
-           	 				    </option>
+           	 				</option>
             					<% }); %>
           				</select>
         			</label>
         			<label>Image:
           				<input name="item[image]" value="<%=item.image%>" type="url" size="80"
-                            placeholder="http://www.image.com/car.jpeg>
-                        <input name="item[image]" value="<%=item.image%>" type="file">
-        			</label>
+						placeholder="http://www.image.com/car.jpeg>
+					<input name="item[image]" value="<%=item.image%>" type="file">
+				</label>
         			<button>Update</button>
       			</form>
 		</div>
