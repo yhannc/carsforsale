@@ -6,7 +6,12 @@
 .control h2 {
   margin: 10px 0; 
 }
-
+label, button {
+  display: block;  
+}
+input, textarea, select {
+  display：float;
+}
 label {
   padding-top: 10px; 
 }
