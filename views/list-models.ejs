@@ -17,13 +17,6 @@
 		<% } %>
 		<div class="control">
 			<h2>Search for models</h2>
-			<script>
-			function onFormSubmit(form) {
-			form.action = form.action + form.elements['item[id]'].value;
-				console.log(form.action);
-				return true;
-			} 
-			</script>
 			<form method="get" action="/models/">
         			<label>Car model: 
 					<select name="model" required>
