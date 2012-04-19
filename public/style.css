@@ -6,10 +6,10 @@
 .control h2 {
   margin: 10px 0; 
 }
-label, textarea, input, button {
+label, textarea, button {
   display: block;  
 }
-select {
+input, select {
   display：float;
 }
 label {
