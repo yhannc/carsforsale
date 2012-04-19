@@ -20,7 +20,7 @@
 			<dd><img src="<%=item.image%>" alt="<%=item.model%>" width="230" height="153"></dd>
 			<% } %>
 		</dl>
-		<div class="control">
+		<aside class="control">
 			<h2>Update car</h2>
     			<form method="post" action="/cars/<%=item._id%>">
         			<input type="hidden" name="_method" value="put">
@@ -58,6 +58,6 @@
 				</label>
         			<button>Update</button>
       			</form>
-		</div>
+		</aside>
 	</body>
 </html>
