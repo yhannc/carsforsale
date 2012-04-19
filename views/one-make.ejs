@@ -50,6 +50,13 @@
 					(lowercase letters only, no spaces):
 					<input name="item[id]" type="text" required 
 	        				placeholder="escape">
+					<select name="item[id]">
+						<%  related_items.forEach(function(related_item) { %>
+						<option value="<%=related_item._id%>">
+						<%=related_item._id%>
+						</option>
+						<% }); %>
+					</select>
 				</label>
 				<label>Model name:
 					<input name="item[name]" type="text" required 
