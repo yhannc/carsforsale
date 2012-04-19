@@ -16,16 +16,10 @@
 		<div>No models found.</div>
 		<% } %>
 		<div class="control">
-			<h2>Search for models</h2>
+			<h2>Search for models by make</h2>
 			<form method="get" action="/models/">
-        			<label>Car model: 
-					<select name="model" required>
-                				<%  items.forEach(function(items) { %>
-            					<option value="<%=items._id%>">
-              						<%=items.name%>
-           	 				</option>
-            					<% }); %>
-          				</select>
+        			<label>Car make: 
+					<input name="make">
 				</label>
         			<button>Search</button>
      			</form>
