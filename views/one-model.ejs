@@ -7,34 +7,38 @@
 	<body>
 		<a href="/"><h1>Cars for Sale</h1></a>
 		<dl>
-			<dt>Model name</dt>
-			<dd><%=item.name%></dd>
-			<dt>Model make</dt>
-			<dd><a href="/makes/<%=item.make%>"><%=item.make%></a></dd>
-			<% if (item.description) { %>
-			<dt>Model description</dt>
-			<dd><%=item.description%></dd>
-			<% } %>
-			<% if (item.image) { %>
-			<dt>Model image</dt>
-			<dd><img src="<%=item.image%>" alt="<%=item.name%>" width="230" height="153"></dd>
-			<% } %>
-			<dt>Cars</dt>
-			<dd>
-				<% if (related_items.length > 0) { %>
-				<ul>
-					<% related_items.forEach(function(related_item) { %>
-					<li>
-						<a href="/cars/<%=related_item._id%>">
-							<%=related_item.name%>
-						</a>
-					</li>
-					<% }); %>
-				</ul>
-				<% } else { %>
-				No cars have been added.
+			<div itemscope itemtype="http://schema.org/Product/CarModel">
+				<dt>Model name</dt>
+				<dd itemprop="name"><%=item.name%></dd>
+				<dt>Model make</dt>
+				<dd itemprop="brand"><a href="/makes/<%=item.make%>"><%=item.make%></a></dd>
+				<% if (item.description) { %>
+				<dt>Model description</dt>
+				<dd itemprop="description"><%=item.description%></dd>
 				<% } %>
-			</dd>
+				<% if (item.image) { %>
+				<dt>Model image</dt>
+				<dd itemprop="image"><img src="<%=item.image%>" alt="<%=item.name%>" width="230" height="153"></dd>
+				<% } %>
+			</div>
+			<div itemscope itemtype="http://schema.org/Product/Car">
+				<dt>Cars</dt>
+				<dd itemprop="url">
+					<% if (related_items.length > 0) { %>
+					<ul>
+						<% related_items.forEach(function(related_item) { %>
+						<li>
+							<a href="/cars/<%=related_item._id%>">
+								<%=related_item.name%>
+							</a>
+						</li>
+						<% }); %>
+					</ul>
+					<% } else { %>
+					No cars have been added.
+					<% } %>
+				</dd>
+			</div>
 		</dl>
 		<div class="control">
 			<h2>Add a new used car for sale</h2>
