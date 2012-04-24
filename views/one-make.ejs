@@ -17,12 +17,12 @@
 			</div>
 			<div itemscope itemtype="http://schema.org/Product/CarModel">
 				<dt>Models</dt>
-				<dd itemprop="url">
+				<dd>
 					<% if (related_items.length > 0) { %>
 					<ul>
 						<% related_items.forEach(function(related_item) { %>
 						<li>
-							<a href="/models/<%=related_item._id%>">
+							<a href="/models/<%=related_item._id%>" itemprop="url">
 								<%=related_item.name%>
 							</a>
 						</li>
