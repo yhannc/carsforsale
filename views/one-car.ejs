@@ -13,10 +13,10 @@
 			<dd itemprop="model"><a href="/models/<%=item.model%>"><%=item.model%></a></dd>
 			<dt>Car model-year</dt>
 			<dd itemprop="modelYear"><%=item.modelyear%></dd>
-			<span itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+			<div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
 				<dt>Car price</dt>
 				<dd itemprop="price"><%=item.price%></dd>
-			</span>
+			</div>
 			<% if (item.image) { %>
 			<dt>Image</dt>
 			<dd itemprop="image"><img src="<%=item.image%>" alt="<%=item.model%>" width="230" height="153"></dd>
