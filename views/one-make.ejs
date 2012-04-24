@@ -6,29 +6,33 @@
 	</head>
 	<body>
 		<a href="/"><h1>Cars for Sale</h1></a>
-		<dl itemscope itemtype="http://schema.org/Organization">
-			<dt>Make name</dt>
-			<dd itemprop="name"><%=item.name%></dd>
-			<% if (item.description) { %>
-			<dt>Make description</dt>
-			<dd itemprop="description"><%=item.description%></dd>
-			<% } %>
-			<dt>Models</dt>
-			<dd itemprop="url">
-				<% if (related_items.length > 0) { %>
-				<ul>
-					<% related_items.forEach(function(related_item) { %>
-					<li>
-						<a href="/models/<%=related_item._id%>">
-							<%=related_item.name%>
-						</a>
-					</li>
-					<% }); %>
-				</ul>
-				<% } else { %>
-				No models have been added.
+		<dl>
+			<div itemscope itemtype="http://schema.org/Organization">
+				<dt>Make name</dt>
+				<dd itemprop="name"><%=item.name%></dd>
+				<% if (item.description) { %>
+				<dt>Make description</dt>
+				<dd itemprop="description"><%=item.description%></dd>
 				<% } %>
-			</dd>
+			</div>
+			<div itemscope itemtype="http://schema.org/Product/CarModel">
+				<dt>Models</dt>
+				<dd itemprop="url">
+					<% if (related_items.length > 0) { %>
+					<ul>
+						<% related_items.forEach(function(related_item) { %>
+						<li>
+							<a href="/models/<%=related_item._id%>">
+								<%=related_item.name%>
+							</a>
+						</li>
+						<% }); %>
+					</ul>
+					<% } else { %>
+					No models have been added.
+					<% } %>
+				</dd>
+			</div>
 		</dl>
 		<div class="control">
 			<h2>Add or update a car model</h2>
