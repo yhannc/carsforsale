@@ -6,18 +6,20 @@
 	</head>
 	<body>
 		<a href="/"><h1>Cars for Sale</h1></a>
-		<dl>
+		<dl itemscope itemtype="http://schema.org/Product/Car">
 			<dt>Car name</dt>
-			<dd><%=item.name%></dd>
+			<dd itemprop="name"><%=item.name%></dd>
 			<dt>Car model</dt>
-			<dd><a href="/models/<%=item.model%>"><%=item.model%></a></dd>
+			<dd itemprop="model"><a href="/models/<%=item.model%>"><%=item.model%></a></dd>
 			<dt>Car model-year</dt>
-			<dd><%=item.modelyear%></dd>
-			<dt>Car price</dt>
-			<dd><%=item.price%></dd>
+			<dd itemprop="modelYear"><%=item.modelyear%></dd>
+			<div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+				<dt>Car price</dt>
+				<dd itemprop="price"><%=item.price%></dd>
+			<div/>
 			<% if (item.image) { %>
 			<dt>Image</dt>
-			<dd><img src="<%=item.image%>" alt="<%=item.model%>" width="230" height="153"></dd>
+			<dd itemprop="image"><img src="<%=item.image%>" alt="<%=item.model%>" width="230" height="153"></dd>
 			<% } %>
 		</dl>
 		<div class="control">
