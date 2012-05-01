@@ -6,17 +6,15 @@
 	</head>
 	<body>
 		<a href="/"><h1>Cars for Sale</h1></a>
-		<div itemscope itemtype="http://schema.org/Product/Car">
-			<% if (items.length > 0) { %>
-			<ul>
-				<% items.forEach(function(item) { %>
-				<li><a href="/cars/<%=item._id%>" itemprop="url"><%=item.name%></a></li>
-				<% }); %>
-			</ul>
-			<% } else { %>
-			<div>No cars found.</div>
-			<% } %>
-		</div>
+		<% if (items.length > 0) { %>
+		<ul>
+			<% items.forEach(function(item) { %>
+			<li><a href="/cars/<%=item._id%>"><%=item.name%></a></li>
+			<% }); %>
+		</ul>
+		<% } else { %>
+		<div>No cars found.</div>
+		<% } %>
 		<div class="control">
 			<h2>Search for cars</h2>
 			<form method="get" action="/cars/">
