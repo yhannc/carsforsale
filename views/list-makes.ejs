@@ -18,11 +18,11 @@
 		<div class="control">
 			<h2>Add or update a new make</h2>
 			<script>
-			function onFormSubmit(form) {
-			form.action = form.action + form.elements['item[id]'].value;
+				function onFormSubmit(form) {
+				form.action = form.action + form.elements['item[id]'].value;
 				console.log(form.action);
 				return true;
-			} 
+				} 
 			</script>
 			<form id="create-make" method="post" action="/makes/" 
 				onsubmit="return onFormSubmit(this);">
@@ -34,7 +34,7 @@
 					(lowercase letters only, no spaces):<br>
 					<input name="item[id]" type="text" pattern="[a-z]+" required
 						placeholder="ford">
-					  <select name="item[id]">
+					<select name="item[id]">
 						<%  makes.forEach(function(make) { %>
 						<option value="<%=make._id%>">
 						<%=make._id%>
@@ -55,7 +55,7 @@
 				</label>
 				<label>Make description:
 					<textarea name="item[description]" cols="20" rows="10" 
-                        placeholder="description of the item">
+						placeholder="description of the item">
 					</textarea>
 				</label>
 				<button>Add or update</button>
