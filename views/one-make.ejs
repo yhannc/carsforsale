@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
-		<title>Cars for Sale: <%=item.name%></title>
+		<title>Cars for Sale: <%=make.name%></title>
 		<link rel="stylesheet" href="/style.css">
 	</head>
 	<body>
@@ -9,20 +9,20 @@
 		<dl>
 			<div itemscope itemtype="http://schema.org/Organization">
 				<dt>Make name</dt>
-				<dd itemprop="name"><%=item.name%></dd>
-				<% if (item.description) { %>
+				<dd itemprop="name"><%=make.name%></dd>
+				<% if (make.description) { %>
 				<dt>Make description</dt>
-				<dd itemprop="description"><%=item.description%></dd>
+				<dd itemprop="description"><%=make.description%></dd>
 				<% } %>
 			</div>
 			<dt>Models</dt>
 			<dd>
-				<% if (related_items.length > 0) { %>
+				<% if (models.length > 0) { %>
 				<ul>
-					<% related_items.forEach(function(related_item) { %>
+					<% models.forEach(function(model) { %>
 					<li>
-						<a href="/models/<%=related_item._id%>">
-							<%=related_item.name%>
+						<a href="/models/<%=model._id%>">
+							<%=model.name%>
 						</a>
 					</li>
 					<% }); %>
@@ -48,15 +48,15 @@
 				<!-- form is submitted. -------------------------------------------->
 				<input type="hidden" name="_method" value="put">
 				<!-- The line above tells the server to treat this as a PUT request. -->
-				<input type="hidden" name="item[make]" value="<%=item._id%>">
-	    			<label>Model ID<br>
+				<input type="hidden" name="item[make]" value="<%=make._id%>">
+	    			<label>Model ID:<br>
 					(lowercase letters only, no spaces):<br>
 					<input name="item[id]" type="text" required 
 	        				placeholder="escape">
 					<select name="item[id]">
-						<%  related_items.forEach(function(related_item) { %>
-						<option value="<%=related_item._id%>">
-						<%=related_item._id%>
+						<%  models.forEach(function(model) { %>
+						<option value="<%=model._id%>">
+						<%=model._id%>
 						</option>
 						<% }); %>
 					</select>
@@ -65,9 +65,9 @@
 					<input name="item[name]" type="text" required 
 	        				placeholder="Escape">
 					<select name="item[name]">
-						<%  related_items.forEach(function(related_item) { %>
-						<option value="<%=related_item._id%>">
-						<%=related_item.name%>
+						<%  models.forEach(function(model) { %>
+						<option value="<%=model._id%>">
+						<%=model.name%>
 						</option>
 						<% }); %>
 					</select>

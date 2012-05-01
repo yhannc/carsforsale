@@ -6,10 +6,10 @@
 	</head>
 	<body>
 		<a href="/"><h1>Cars for Sale</h1></a>
-		<% if (items.length > 0) { %>
+		<% if (makes.length > 0) { %>
 		<ul>
-			<% items.forEach(function(item) { %>
-			<li><a href="/makes/<%=item._id%>"><%=item.name%></a></li>
+			<% makes.forEach(function(make) { %>
+			<li><a href="/makes/<%=make._id%>"><%=make.name%></a></li>
 			<% }); %>
 		</ul>
 		<% } else { %>
@@ -34,10 +34,10 @@
 					(lowercase letters only, no spaces):<br>
 					<input name="item[id]" type="text" pattern="[a-z]+" required
 						placeholder="ford">
-					<select name="item[id]">
-						<%  items.forEach(function(item) { %>
-						<option value="<%=item._id%>">
-						<%=item._id%>
+					  <select name="item[id]">
+						<%  makes.forEach(function(make) { %>
+						<option value="<%=make._id%>">
+						<%=make._id%>
 						</option>
 						<% }); %>
 					</select>
@@ -46,16 +46,16 @@
 					<input name="item[name]" type="text" required
 						placeholder="Ford">
 					<select name="item[name]">
-						<%  items.forEach(function(item) { %>
-						<option value="<%=item._id%>">
-						<%=item.name%>
+						<%  makes.forEach(function(make) { %>
+						<option value="<%=make._id%>">
+						<%=make.name%>
 						</option>
 						<% }); %>
 					</select>
 				</label>
 				<label>Make description:
 					<textarea name="item[description]" cols="20" rows="10" 
-						placeholder="description of the make">
+                        placeholder="description of the item">
 					</textarea>
 				</label>
 				<button>Add or update</button>

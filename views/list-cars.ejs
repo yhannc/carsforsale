@@ -18,7 +18,7 @@
 		<div class="control">
 			<h2>Search for cars</h2>
 			<form method="get" action="/cars/">
-				<label>Car make: 
+				<label>Car make:<br> 
 					<select name="make" required>
 						<%  makes.forEach(function(make) { %>
 						<option value="<%=make%>">
@@ -27,7 +27,7 @@
 						<% }); %>
 					</select>
 				</label>				
-				<label>Car model: 
+				<label>Car model: <br>
 					<select name="model" required>
 						<%  models.forEach(function(model) { %>
 						<option value="<%=model%>">
@@ -36,6 +36,15 @@
 						<% }); %>
 					</select>
 				</label>
+    			<label>Car model-year: <br>      				   
+					<select name="modelyear">
+                    				<% for (var modelyear = 2012; modelyear >= 1990; modelyear = modelyear-1) {%>
+            					<option value="<%=modelyear%>">
+                     						<%=modelyear%>
+						</option>
+            					<% } %>
+          				</select>
+       				</label>
 				<button>Search</button>
 			</form>
 		</div>

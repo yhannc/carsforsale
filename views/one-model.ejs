@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
-		<title>Cars for Sale: <%=item.name%></title>
+		<title>Cars for Sale: <%=model.name%></title>
 		<link rel="stylesheet" href="/style.css">
 	</head>
 	<body>
@@ -9,28 +9,28 @@
 		<dl>
 			<div itemscope itemtype="http://schema.org/Product/CarModel">
 				<dt>Model name</dt>
-				<dd itemprop="name"><%=item.name%></dd>
+				<dd itemprop="name"><%=model.name%></dd>
 				<dt>Model make</dt>
 				<dd itemprop="manufacturer" itemscope itemtype="http://schema.org/Organization">
-					<span itemprop="name"><a href="/makes/<%=item.make%>"><%=item.make%></a></span>
+					<span itemprop="name"><a href="/makes/<%=model.make%>"><%=model.make%></a></span>
 				</dd>
-				<% if (item.description) { %>
+				<% if (model.description) { %>
 				<dt>Model description</dt>
-				<dd itemprop="description"><%=item.description%></dd>
+				<dd itemprop="description"><%=model.description%></dd>
 				<% } %>
-				<% if (item.image) { %>
+				<% if (model.image) { %>
 				<dt>Model image</dt>
-				<dd itemprop="image"><img src="<%=item.image%>" alt="<%=item.name%>" width="230" height="153"></dd>
+				<dd itemprop="image"><img src="<%=model.image%>" alt="<%=model.name%>" width="230" height="153"></dd>
 				<% } %>
 			</div>
 			<dt>Cars</dt>
 			<dd>
-				<% if (related_items.length > 0) { %>
+				<% if (cars.length > 0) { %>
 				<ul>
-					<% related_items.forEach(function(related_item) { %>
+					<% cars.forEach(function(car) { %>
 					<li>
-						<a href="/cars/<%=related_item._id%>">
-							<%=related_item.name%>
+						<a href="/cars/<%=car._id%>">
+							<%=car.name%>
 						</a>
 					</li>
 					<% }); %>
@@ -44,7 +44,8 @@
 		<div class="control">
 			<h2>Add a new used car for sale</h2>
 			<form id="create-car" method="post" action="/cars/">
-				<input type="hidden" name="item[model]" value="<%=item._id%>">
+				<input type="hidden" name="item[model]" value="<%=model._id%>">
+                <input type="hidden" name="item[make]" value="<%=model.make%>">
 				<!-- The line above links the car to be created to this model. -->
 				<label>Car name:<br>
 					<input name="item[name]" type="text" required
@@ -52,9 +53,9 @@
 				</label>
                 		<label>Car model-year: 
 					<select name="item[modelyear]" required>
-                        			<% for (var modelyears = 2012; modelyears >= 1990; modelyears = modelyears-1) {%>
-            					<option value="<%=modelyears%>">
-              						<%=modelyears%>
+                        			<% for (var modelyear = 2012; modelyear >= 1990; modelyear = modelyear-1) {%>
+            					<option value="<%=modelyear%>">
+              						<%=modelyear%>
            	 				</option>
             					<% } %>
           				</select>

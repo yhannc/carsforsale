@@ -1,70 +1,80 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
-		<title>Cars for Sale: <%=item.name%></title>
+		<title>Cars for Sale: <%=car.name%></title>
 		<link rel="stylesheet" href="/style.css">
 	</head>
 	<body>
 		<a href="/"><h1>Cars for Sale</h1></a>
 		<dl itemscope itemtype="http://schema.org/Product/Car">
 			<dt>Car name</dt>
-			<dd itemprop="name"><%=item.name%></dd>
+			<dd itemprop="name"><%=car.name%></dd>
 			<dt>Car model</dt>
-			<dd itemprop="model"><a href="/models/<%=item.model%>"><%=item.model%></a></dd>
+			<dd itemprop="model"><a href="/models/<%=car.model%>"><%=car.model%></a></dd>
 			<dt>Car model-year</dt>
-			<dd itemprop="modelYear"><%=item.modelyear%></dd>
+			<dd itemprop="modelYear"><%=car.modelyear%></dd>
 			<div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
 				<dt>Car price</dt>
-				<dd itemprop="price"><%=item.price%></dd>
+				<dd itemprop="price"><%=car.price%></dd>
 			</div>
-			<% if (item.description) { %>
+			<% if (car.description) { %>
 			<dt>Car description</dt>
-			<dd itemprop="description"><%=item.description%></dd>
+			<dd itemprop="description"><%=car.description%></dd>
 			<% } %>
-			<% if (item.image) { %>
+			<% if (car.image) { %>
 			<dt>Image</dt>
-			<dd itemprop="image"><img src="<%=item.image%>" alt="<%=item.model%>" width="230" height="153"></dd>
+			<dd itemprop="image"><img src="<%=car.image%>" alt="<%=car.name%>" width="230" height="153"></dd>
 			<% } %>
 		</dl>
 		<div class="control">
 			<h2>Update car</h2>
-    			<form id="update-car" method="post" action="/cars/<%=item._id%>">
+    			<form id="update-car" method="post" action="/cars/<%=car._id%>">
         			<input type="hidden" name="_method" value="put">
         			<!-- The line above tells the server to treat this as a PUT request. -->
 				<label>Car name:<br> 
-                  			<input name="item[name]" value="<%=item.name%>" type="text" required>
+                  			<input name="item[name]" value="<%=car.name%>" type="text" required>
        				</label>
+                    <label>Car make:
+              			<select name="item[make]" required>
+            					<%  makes.forEach(function(make) { %>
+            					<option value="<%=make%>"
+              						<% if (make === car.make) { %>selected<% } %>>
+              						<%=make%>
+           	 				</option>
+            					<% }); %>
+          				</select>
+        			</label>
         			<label>Car model:
           				<select name="item[model]" required>
-            					<%  related_items.forEach(function(related_item) { %>
-            					<option value="<%=related_item._id%>"
-              						<% if (related_item._id === item.model) { %>selected<% } %>>
-              						<%=related_item.name%>
+            					<%  models.forEach(function(model) { %>
+            					<option value="<%=model._id%>"
+              						<% if (model.name === car.model) { %>selected<% } %>>
+              						<%=model.name%>
            	 				</option>
             					<% }); %>
           				</select>
         			</label>
 				<label>Car model-year:       				   
 					<select name="item[modelyear]" required>
-                    				<% for (var modelyears = 2012; modelyears >= 1990; modelyears = modelyears-1) {%>
-            					<option value="<%=modelyears%>"
-              						<% if (modelyears === Number(item.modelyear)) { %>selected<% } %>>
-              						<%=modelyears%>
+                    				<% for (var modelyear = 2012; modelyear >= 1990; modelyear = modelyear-1) {%>
+            					<option value="<%=modelyear%>"
+              						<% if (modelyear === Number(car.modelyear)) { %>selected<% } %>>
+              						<%=modelyear%>
 						</option>
             					<% } %>
           				</select>
        				</label>
 				<label>Car Price:<br> 
-                  			<input name="item[price]" value="<%=item.price%>" type="number" min="3000" step="100" required>
+                  			<input name="item[price]" value="<%=car.price%>" type="number" min="3000" step="100" required>
        				</label>
         			<label>Image:<br>
-          				<input name="item[image]" value="<%=item.image%>" type="url" size="40"
+          				<input name="item[image]" value="<%=car.image%>" type="url" size="40"
 						placeholder="http://www.image.com/car.jpeg>
 				</label>
 				<label>Car description:
 					<textarea name="item[description]" cols="40" rows="10" 
 						placeholder="description of the make">
-					<%item.description%>
+					<%=car.description%>
 					</textarea>
 				</label>
         			<button>Update</button>
