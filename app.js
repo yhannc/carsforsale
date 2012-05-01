@@ -178,7 +178,7 @@ app.get('/models/',         // TODO: change to suit your URI design.
         });
         res.render(
           'list-models',   // TODO: change to the name of your HTML template.
-          { items: items, makes: Object.keys(makes) }
+          { items: items, makes: makes }
         );
       }
     });
