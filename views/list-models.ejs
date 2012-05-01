@@ -20,9 +20,9 @@
 			<form method="get" action="/models/">
         			<label>Car make: 
 					<select name="make" required>
-						<%  items.forEach(function(item) { %>
-						<option value="<%=item.make%>">
-						<%=item.make%>
+						<%  makes.forEach(function(make) { %>
+						<option value="<%=make%>">
+						<%=make%>
 						</option>
 						<% }); %>
 					</select>
