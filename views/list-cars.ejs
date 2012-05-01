@@ -18,11 +18,20 @@
 		<div class="control">
 			<h2>Search for cars</h2>
 			<form method="get" action="/cars/">
+				<label>Car make: 
+					<select name="make" required>
+						<%  makes.forEach(function(make) { %>
+						<option value="<%=make%>">
+						<%=make%>
+						</option>
+						<% }); %>
+					</select>
+				</label>
 				<label>Car model: 
 					<select name="model" required>
-						<%  items.forEach(function(item) { %>
-						<option value="<%=item.model%>">
-						<%=item.model%>
+						<%  models.forEach(function(model) { %>
+						<option value="<%=model%>">
+						<%=model%>
 						</option>
 						<% }); %>
 					</select>
