@@ -23,23 +23,22 @@
 				<dd itemprop="image"><img src="<%=item.image%>" alt="<%=item.name%>" width="230" height="153"></dd>
 				<% } %>
 			</div>
-			<div itemscope itemtype="http://schema.org/Product/Car">
-				<dt>Cars</dt>
-				<dd>
-					<% if (related_items.length > 0) { %>
-					<ul>
-						<% related_items.forEach(function(related_item) { %>
-						<li>
-							<a href="/cars/<%=related_item._id%>" itemprop="url">
-								<%=related_item.name%>
-							</a>
-						</li>
-						<% }); %>
-					</ul>
-					<% } else { %>
-					No cars have been added.
-					<% } %>
-				</dd>
+			<dt>Cars</dt>
+			<dd>
+				<% if (related_items.length > 0) { %>
+				<ul>
+					<% related_items.forEach(function(related_item) { %>
+					<li>
+						<a href="/cars/<%=related_item._id%>">
+							<%=related_item.name%>
+						</a>
+					</li>
+					<% }); %>
+				</ul>
+				<% } else { %>
+				No cars have been added.
+				<% } %>
+			</dd>
 			</div>
 		</dl>
 		<div class="control">
