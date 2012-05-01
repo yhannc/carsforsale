@@ -206,9 +206,13 @@ app.get('/cars/',          // TODO: change to suit your URI design.
         items.forEach(function(item) {
           models[item.model] = true;
         });
+        var makes = {};
+        items.forEach(function(item) {
+          makes[item.make] = true;
+        });
         res.render(
           'list-cars', // TODO: change to the name of your HTML template.
-          { items: items, models: Object.keys(models) }
+          { items: items, models: Object.keys(models), makes: Object.keys(makes) }
         );
       }
     });
