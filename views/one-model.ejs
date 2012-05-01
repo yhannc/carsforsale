@@ -11,7 +11,9 @@
 				<dt>Model name</dt>
 				<dd itemprop="name"><%=item.name%></dd>
 				<dt>Model make</dt>
-				<dd itemprop="brand"><a href="/makes/<%=item.make%>"><%=item.make%></a></dd>
+				<dd itemprop="manufacturer" itemscope itemtype="http://schema.org/Organization">
+					<a href="/makes/<%=item.make%>"><%=item.make%></a>
+				</dd>
 				<% if (item.description) { %>
 				<dt>Model description</dt>
 				<dd itemprop="description"><%=item.description%></dd>
