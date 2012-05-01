@@ -139,7 +139,7 @@ app.get('/makes/',         // TODO: change to suit your URI design.
     var item_type = 'make'; // TODO: change to the type of item you want.
 
     // Get all items of the specified type from the database.
-    db.getAll(item_type, function(err, items) {
+    db.getAll(item_type, function(err, makes) {
 
       // If there was a database error, return an error status.
       if (err) { res.send(err, 500); } 
@@ -148,7 +148,7 @@ app.get('/makes/',         // TODO: change to suit your URI design.
       else {
         res.render(
           'list-makes',   // TODO: change to the name of your HTML template.
-          { items: items }
+          { makes: makes }
         );
       }
     });
@@ -165,7 +165,7 @@ app.get('/models/',         // TODO: change to suit your URI design.
     var item_type = 'model'; // TODO: change to the type of item you want.
 
     // Get all items of the specified type from the database.
-    db.getSome(item_type, req.query, function(err, items) {
+    db.getSome(item_type, req.query, function(err, models) {
 
       // If there was a database error, return an error status.
       if (err) { res.send(err, 500); } 
@@ -173,12 +173,12 @@ app.get('/models/',         // TODO: change to suit your URI design.
       // Otherwise, use the returned data to render an HTML page.
       else {
         var makes = {};
-        items.forEach(function(item) {
-          makes[item.make] = true;
+        models.forEach(function(model) {
+          makes[model.make] = true;
         });
         res.render(
           'list-models',   // TODO: change to the name of your HTML template.
-          { items: items, makes: Object.keys(makes) }
+          { models: models, makes: Object.keys(makes) }
         );
       }
     });
@@ -233,7 +233,7 @@ app.get('/makes/:id',      // TODO: change to suit your URI design.
     var item_id = req.params.id;
   
     // Get one item of the specified type, identified by the item ID.
-    db.getOne(item_type, item_id, function(err, item) {
+    db.getOne(item_type, item_id, function(err, make) {
         
       // If there was a database error, return an error status.
       if (err) {
@@ -252,7 +252,7 @@ app.get('/makes/:id',      // TODO: change to suit your URI design.
                                    // and the related items to be fetched below.
 
         // Get items of the specified type that match the query.
-        db.getSome(related_type, req.query, function(err, items) {
+        db.getSome(related_type, req.query, function(err, models) {
 
           // If there was a database error, return an error status.
           if (err) { res.send(err, 500); } 
@@ -261,7 +261,7 @@ app.get('/makes/:id',      // TODO: change to suit your URI design.
           else {
             res.render(
             'one-make', // TODO: change to the name of your HTML template.
-              { item: item, related_items: items }
+              { make: make, models: models }
             );
           }
         });
@@ -284,7 +284,7 @@ app.get('/models/:id',      // TODO: change to suit your URI design.
     var item_id = req.params.id;
   
     // Get one item of the specified type, identified by the item ID.
-    db.getOne(item_type, item_id, function(err, item) {
+    db.getOne(item_type, item_id, function(err, model) {
         
       // If there was a database error, return an error status.
       if (err) {
@@ -304,7 +304,7 @@ app.get('/models/:id',      // TODO: change to suit your URI design.
                                    // and the related items to be fetched below.
 
         // Get items of the specified type that match the query.
-        db.getSome(related_type, req.query, function(err, items) {
+        db.getSome(related_type, req.query, function(err, cars) {
 
           // If there was a database error, return an error status.
           if (err) { res.send(err, 500); } 
@@ -313,7 +313,7 @@ app.get('/models/:id',      // TODO: change to suit your URI design.
           else {
             res.render(
             'one-model', // TODO: change to the name of your HTML template.
-              { item: item, related_items: items }
+              { model: model, cars: cars }
             );
           }
         });
@@ -337,7 +337,7 @@ app.get('/cars/:id',       // TODO: change to suit your URI design.
     var item_id = req.params.id;
   
     // Get one item of the specified type, identified by the item ID.
-    db.getOne(item_type, item_id, function(err, item) {
+    db.getOne(item_type, item_id, function(err, car) {
         
       // If there was a database error, return an error status.
       if (err) {
@@ -351,16 +351,20 @@ app.get('/cars/:id',       // TODO: change to suit your URI design.
         var related_type = 'model'; // TODO: change to type of related item.
 
         // Get all items of the specified related type.
-        db.getAll(related_type, function(err, items) {
+        db.getAll(related_type, function(err, models) {
 
           // If there was a database error, return an error status.
           if (err) { res.send(err, 500); } 
 
           // Otherwise, use the returned data to render an HTML page.
           else {
+            var makes = {};
+            models.forEach(function(model) {
+            makes[model.make] = true;
+            });
             res.render(
               'one-car', // TODO: change to name of your HTML template.
-              { item: item, related_items: items }
+              { car: car, models: models, makes: Object.keys(makes) }
             );
           }
         });
