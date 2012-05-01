@@ -202,9 +202,17 @@ app.get('/cars/',          // TODO: change to suit your URI design.
 
       // Otherwise, use the returned data to render an HTML page.
       else {
+        var makes = {};
+        items.forEach(function(item) {
+          makes[item.make] = true;
+        });
+        var models = {};
+        items.forEach(function(item) {
+          models[item.model] = true;
+        });
         res.render(
           'list-cars', // TODO: change to the name of your HTML template.
-          { items: items }
+          { items: items, makes: Object.keys(makes), models: Object.keys(models) }
         );
       }
     });
