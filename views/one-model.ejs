@@ -12,7 +12,7 @@
 				<dd itemprop="name"><%=item.name%></dd>
 				<dt>Model make</dt>
 				<dd itemprop="manufacturer" itemscope itemtype="http://schema.org/Organization">
-					<a href="/makes/<%=item.make%>"><%=item.make%></a>
+					<span itemprop="name"><a href="/makes/<%=item.make%>"><%=item.make%></a></span>
 				</dd>
 				<% if (item.description) { %>
 				<dt>Model description</dt>
