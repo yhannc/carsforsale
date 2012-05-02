@@ -58,13 +58,15 @@ Class attribute values
 		`a.rel="car"`
 - *car-image*
 	Applied to an `img` tag. A reference to an image of the listed car.
-- *car-search*
+- **car-search**
+	
 	Applied to a `form` tag. A link template to search of all the cars. 
 	The element must be set to `form.method="get"` and should contain 
 	the following descendant elements:
-		`select.name="make"`
-		`select.name="model"`
-		`select.name="modelyear"`
+		
+		select.name="make"
+		select.name="model"
+		select.name="modelyear"
 - *car-text*
 	Applied to a `span` tag. The name of the listed car.
 - *car-update*
@@ -94,6 +96,13 @@ Class attribute values
 	contain the following descendant elements:
 		`span.class="model-text"`
 		`a.rel="model"`
+- **model-search**
+	
+	Applied to a `form` tag. A link template to search of all the models. 
+	The element must be set to `form.method="get"` and should contain 
+	the following descendant elements:
+		
+		select.name="make"
 - *model-text*
 	Applied to a `span` tag. The name of a car model.
 - *single*
