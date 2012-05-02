@@ -11,7 +11,7 @@
 			<dd itemprop="name"><%=car.name%></dd>
 			<div itemprop="itemOffered" itemscope itemtype="http://schema.org/Product/Car">
 				<dt>Car make</dt>
-				<dd itemprop="manufacturer" itemscope itemtype="http://schema.org/Organization">
+				<dd itemprop="manufacturer" itemscope itemtype="http://schema.org/Organization/CarMake">
 					<span itemprop="name"><a href="/makes/<%=car.make%>"><%=car.make%></a></span>
 				</dd>
 				<dt>Car model</dt>
@@ -27,7 +27,9 @@
 			<% } %>
 			<% if (car.image) { %>
 			<dt>Image</dt>
-			<dd itemprop="image"><img src="<%=car.image%>" alt="<%=car.name%>" width="230" height="153"></dd>
+			<dd itemprop="image"><img src="<%=car.image%>" 
+				alt="<%=car.name%>" width="230" height="153">
+			</dd>
 			<% } %>
 		</dl>
 		<div class="control">
@@ -41,8 +43,7 @@
 				<label>Car make:
 					<select name="item[make]" required>
 						<%  makes.forEach(function(make) { %>
-						<option value="<%=make%>"
-							<% if (make === car.make) { %>selected<% } %>>
+						<option value="<%=make%>" <% if (make === car.make) { %>selected<% } %>>
 							<%=make%>
 						</option>
 						<% }); %>
@@ -51,8 +52,7 @@
 				<label>Car model:
 					<select name="item[model]" required>
 						<%  models.forEach(function(model) { %>
-						<option value="<%=model._id%>"
-							<% if (model.name === car.model) { %>selected<% } %>>
+						<option value="<%=model._id%>" <% if (model.name === car.model) { %>selected<% } %>>
 							<%=model.name%>
 						</option>
 						<% }); %>
@@ -60,9 +60,8 @@
 				</label>
 				<label>Car model-year:       				   
 					<select name="item[modelyear]" required>
-						<% for (var modelyear = 2012; modelyear >= 1990; modelyear = modelyear-1) {%>
-						<option value="<%=modelyear%>"
-							<% if (modelyear === Number(car.modelyear)) { %>selected<% } %>>
+						<% for (var modelyear = 2012; modelyear >= 1995; modelyear = modelyear-1) {%>
+						<option value="<%=modelyear%>" <% if (modelyear === Number(car.modelyear)) { %>selected<% } %>>
 							<%=modelyear%>
 						</option>
 						<% } %>
@@ -72,8 +71,8 @@
 					<input name="item[price]" value="<%=car.price%>" type="number" min="3000" step="100" required>
 				</label>
 				<label>Car image:<br>
-					<input name="item[image]" value="<%=car.image%>" type="url" size="40"
-						placeholder="http://www.image.com/car.jpeg>
+					<input name="item[image]" value="<%=car.image%>" 
+						type="url" size="40" placeholder="http://www.image.com/car.jpeg">
 				</label>
 				<label>Car description:
 					<textarea name="item[description]" cols="40" rows="10" 
