@@ -129,52 +129,56 @@ Name attribute values
 - **car**
 	
 	Applied to an `input[text]` element. The name of a car.
-- *description*
+- **description**
+	
 	Applied to a `textarea` element. The description of the car.
-- *image*
+- **image**
+	
 	Applied to an `input[image]` element. The image for the car.
-- *make*
+- **make**
+	
 	Applied to an `select` element. The search value to use when 
 	searching models or cars.
-- *model*
+- **model**
+	
 	Applied to an `select` element. The search value to use when 
 	searching cars.
-- *modelyear*
+- **modelyear**
+	
 	Applied to an `select` element. The search value to use when 
 	searching cars.
 
 Rel attribute values
 --------------------
 
-- *car*
+- **car**
+	
 	Applied to an `a` tag. A reference to a car representation.
-- *cars*
-	Applied to an `a` tag. A reference to a list of cars representation.
-- *make*
+
+- **make**
+	
 	Applied to an `a` tag. A reference to a make representation.
-- *makes*
-	Applied to an `a` tag. A reference to a list of makes representation.
-- *model*
+
+- **model**
+	
 	Applied to an `a` tag. A reference to a model representation.
-- *models*
-	Applied to an `a` tag. A reference to a list of models representation.
-- *year*
-	Applied to an `a` tag. A reference to a year representation.
-- *years*
-	Applied to an `a` tag. A reference to a list of years representation.
 
 Types
 -----
 
-- *Car*
+- **Car**
+	
 	Applied to `car` resource. 
-- *CarModel*
+- **CarModel**
+	
 	Applied to `model` resource.
-- *Organization*
+- **Organization**
+	
 	Applied to `make` resource.
 	
 Properties
 ----------
 
-- *name*
+- **name**
+	
 	Applied to `Product/Car` and `Product/CarModel`.
