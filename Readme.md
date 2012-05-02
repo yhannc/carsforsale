@@ -23,8 +23,6 @@ Class attribute values
 	`li.class="make"` descendant elements. When this element is a 
 	descendant of `div.id="models"`	it may have one or more 
 	`li.class="model"` descendant elements. When this element is a 
-	descendant of `div.id="years"` it may have one or more 
-	`li.class="year"` descendant elements. When this element is a 
 	descendant of `div.id="cars"` it may have one or more `li.class="car"` 
 	descendant elements.
 - *car*
