@@ -136,7 +136,7 @@ Name attribute values
 	or car.
 - **item[image]**
 	
-	Applied to an `input[image]` element. The image for a make,
+	Applied to an `input[url]` element. The image for a make,
 	model, or car.
 - **item[make]**
 	
