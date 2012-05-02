@@ -48,28 +48,28 @@
 			} 
 			</script>
 			<script>
-			$(function() {
-				var availableids = [
-					<%  models.forEach(function(model) { %>
-					"<%=model._id%>",
-					<% }); %>
-				];
-				$( "#modelids" ).autocomplete({
-					source: availableids
+				$(function() {
+					var availableids = [
+						<%  models.forEach(function(model) { %>
+						"<%=model._id%>",
+						<% }); %>
+					];
+					$( "#modelids" ).autocomplete({
+						source: availableids
+					});
 				});
-			});
 			</script>
 			<script>
-			$(function() {
-				var availablenames = [
-					<%  models.forEach(function(model) { %>
-					"<%=model.name%>",
-					<% }); %>
-				];
-				$( "#modelnames" ).autocomplete({
-					source: availablenames
+				$(function() {
+					var availablenames = [
+						<%  models.forEach(function(model) { %>
+						"<%=model.name%>",
+						<% }); %>
+					];
+					$( "#modelnames" ).autocomplete({
+						source: availablenames
+					});
 				});
-			});
 			</script>
 			<form id="model-add" method="post" action="/models/" 
 				onsubmit="return onFormSubmit(this);">
@@ -81,7 +81,7 @@
 	    			<label>Model ID:<br>
 					(lowercase letters only, no spaces):<br>
 					<input name="item[id]" type="text" pattern="[a-z]+" required id="modelids"
-	        				placeholder="escape" list="modelids">
+	        				placeholder="escape (or type to select)" list="modelids">
 					<!--datalist tag is only available for firefox-->
 					<datalist id="modelids">
 						<%  models.forEach(function(model) { %>
@@ -92,11 +92,11 @@
 				</label>
 				<label>Model name:<br>
 					<input name="item[name]" type="text" required id="modelnames"
-	        				placeholder="Escape">
+	        				placeholder="Escape (or type to select)">
 				</label>
 				<label>Model image:<br>
-					<input name="item[image]" type="url" size="43"
-						placeholder="http://www.image.com/model.jpg">
+					<input name="item[image]" type="url" size="45"
+						placeholder="http://www.carsforsale.com/model.jpg">
 				</label>
 				<label>Model description:
 					<textarea name="item[description]" placeholder="type something :^)"
