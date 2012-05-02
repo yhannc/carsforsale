@@ -68,7 +68,9 @@ Class attribute values
 		`input[text].name="car"`
 	It may also contain the following descendant elements:
 		`input[file].name="image"`
-		`textarea.name="description"`	
+		`textarea.name="description"`
+- *control*
+	Applied to a `div` tag. Add, update or search resources.
 - *description*
 	Applied to a `span` tag. Contains the text description of a car.
 - *make*
