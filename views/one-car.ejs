@@ -7,7 +7,7 @@
 	<body>
 		<a href="/"><h1>Cars for Sale</h1></a>
 		<dl itemscope itemtype="http://schema.org/Offer">
-			<dt>List title</dt>
+			<dt>List name</dt>
 			<dd itemprop="name"><%=car.name%></dd>
 			<div itemprop="itemOffered" itemscope itemtype="http://schema.org/Product/Car">
 				<dt>Car make</dt>
@@ -60,8 +60,8 @@
 						<% } %>
 					</select>
 				</label>
-				<label>List title: 
-					<input name="item[name]" value="<%=car.name%>" type="text" size="39" required>
+				<label>List name: 
+					<input name="item[name]" value="<%=car.name%>" type="text" size="40" required>
 				</label>
 				<label>List price: 
 					<input name="item[price]" value="<%=car.price%>" type="number" min="3000" step="100" required>
