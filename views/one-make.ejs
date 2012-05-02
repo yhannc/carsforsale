@@ -78,8 +78,8 @@
 				<input type="hidden" name="item[make]" value="<%=make._id%>">
 	    			<label>Model ID:<br>
 					(lowercase letters only, no spaces):<br>
-					<input name="item[id]" type="text" required id="modelids" list="modelids"
-	        				placeholder="escape">
+					<input name="item[id]" type="text" pattern="[A-Z]+" required id="modelids"
+	        				placeholder="escape" list="modelids">
 					<!--datalist tag is only available for firefox-->
 					<datalist id="modelids">
 						<%  models.forEach(function(model) { %>
