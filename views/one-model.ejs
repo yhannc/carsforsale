@@ -16,11 +16,15 @@
 				</dd>
 				<% if (model.description) { %>
 				<dt>Model description</dt>
-				<dd itemprop="description"><%=model.description%></dd>
+				<dd itemprop="description">
+					<%=model.description%>
+				</dd>
 				<% } %>
 				<% if (model.image) { %>
 				<dt>Model image</dt>
-				<dd itemprop="image"><img src="<%=model.image%>" alt="<%=model.name%>" width="230" height="153"></dd>
+				<dd itemprop="image"><img src="<%=model.image%>" 
+					alt="<%=model.name%>" width="230" height="153">
+				</dd>
 				<% } %>
 			</div>
 			<dt>Cars</dt>
