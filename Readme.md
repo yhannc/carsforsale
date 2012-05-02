@@ -140,12 +140,12 @@ Name attribute values
 	model, or car.
 - **item[make]**
 	
-	Applied to an `input[text]` or an `select` element. The make
-	of a model or car.
+	Applied to an `input[text]`, input[hidden] or `select` element.
+	The make of a model or car.
 - **item[model]**
 	
-	Applied to an `input[text]` or an `select` element. The model
-	of a car.
+	Applied to an `input[text]`, input[hidden] or `select` element.
+	The model of a car.
 - **item[modelyear]**
 	
 	Applied to an `select` element. The model-year of a car.
