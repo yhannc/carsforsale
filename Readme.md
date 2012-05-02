@@ -13,9 +13,6 @@ ID attribute values
 - *models*
 	Applied to a `div` tag. The list of models in this representation. 
 	This list may contain only one model.
-- *years*
-	Applied to a `div` tag. The list of years in this representation. This 
-	list may contain only one year.
 
 Class attribute values
 ----------------------
