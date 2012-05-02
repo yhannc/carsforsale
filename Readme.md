@@ -15,7 +15,7 @@ ID attribute values
 - **makeids**
 
 	Applied to a `input` tag that can be retrieved by client-side 
-	`autocomplete` javascript.
+	`autocomplete` javascript of [jquery UI](http://code.jquery.com/ui/1.8.20/jquery-ui.min.js)
 - **makenames**
 
 	Applied to a `input` tag that can be retrieved by client-side 
