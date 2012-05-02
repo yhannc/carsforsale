@@ -23,7 +23,6 @@
 				<dd itemprop="image"><img src="<%=model.image%>" alt="<%=model.name%>" width="230" height="153"></dd>
 				<% } %>
 			</div>
-			<div id="cars">
 			<dt>Cars</dt>
 			<dd>
 				<% if (cars.length > 0) { %>
@@ -40,11 +39,10 @@
 				No cars have been added.
 				<% } %>
 			</dd>
-			</div>
 		</dl>
 		<div class="control">
 			<h2>Add a new used car for sale</h2>
-			<form id="create-car" method="post" action="/cars/">
+			<form id="car-add/update" method="post" action="/cars/">
 				<input type="hidden" name="item[model]" value="<%=model._id%>">
 				<input type="hidden" name="item[make]" value="<%=model.make%>">
 				<!-- The line above links the car to be created to this model. -->
