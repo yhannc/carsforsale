@@ -134,12 +134,28 @@ Name attribute values
 	
 	Applied to an `input[text]` element. The id of a make, model,
 	or car.
-- **image**
+- **item[image]**
 	
-	Applied to an `input[image]` element. The image for the car.
-- **item[]**
+	Applied to an `input[image]` element. The image for a make,
+	model, or car.
+- **item[make]**
 	
-	Applied to an `input[text]` element. The name of a car.
+	Applied to an `input[text]` or an `select` element. The make
+	of a model or car.
+- **item[model]**
+	
+	Applied to an `input[text]` or an `select` element. The model
+	of a car.
+- **item[modelyear]**
+	
+	Applied to an `select` element. The model-year of a car.
+- **item[name]**
+	
+	Applied to an `input[text]` element. The name of a make, 
+	model, or car.
+- **item[price]**
+	
+	Applied to an `input[number]` element. The price of a car.
 - **make**
 	
 	Applied to a `select` element. The search value to use when 
