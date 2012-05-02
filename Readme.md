@@ -35,16 +35,19 @@ Class attribute values
 	contain	the following descendant elements:
 		
 		a.rel="car"
-- *car-add*
-	Applied to a `form` tag. A link template to create a new car profile. 
-	The element must be set to `form.method="post"` and should contain 
-	the following descendant elements:
-		`input[text].name="make"`
+- *car-add/update*
+	
+	Applied to a `form` tag. A link template to create or update a new 
+	car profile.The element must be set to `form.method="post"` and 
+	should contain the following descendant elements:
+		
+		input[text].name="make"
 		`input[text].name="model"`
 		`input[text].name="year"`
 		`input[text].name="car"`
 	It may also contain the following descendant elements:
-		`input[file].name="image"`
+
+		input[file].name="image"`
 		`textarea.name="description"`		
 - *car-find*
 	Applied to an `li` tag. A representation of a single car. It should 
