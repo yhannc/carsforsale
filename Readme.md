@@ -79,6 +79,7 @@ Class attribute values
 		select.name="item[modelyear]"
 		input[number].name="item[price]"
 	It may also contain the following descendant elements:
+		
 		input[url].name="item[image]"
 		textarea.name="item[description]"
 - *control*
