@@ -12,10 +12,6 @@ ID attribute values
 	
 	Applied to a `div` tag. The list of makes in this representation. This 
 	list may contain only one make.
-- **models**
-	
-	Applied to a `div` tag. The list of models in this representation. 
-	This list may contain only one model.
 - **makeids**
 
 	Applied to a `input` tag that can be retrieved by client-side 
@@ -24,6 +20,10 @@ ID attribute values
 
 	Applied to a `input` tag that can be retrieved by client-side 
 	`autocomplete` javascript.
+- **models**
+	
+	Applied to a `div` tag. The list of models in this representation. 
+	This list may contain only one model.
 - **modelids**
 
 	Applied to a `input` tag that can be retrieved by client-side 
