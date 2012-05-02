@@ -50,10 +50,6 @@
 				<input type="hidden" name="item[model]" value="<%=model._id%>">
 				<input type="hidden" name="item[make]" value="<%=model.make%>">
 				<!-- The line above links the car to be created to this model. -->
-				<label>Car name:<br>
-					<input name="item[name]" type="text" size="40" required
-						placeholder="good condition">
-				</label>
 				<label>Car model-year: 
 					<select name="item[modelyear]" required>
 						<% for (var modelyear = 2012; modelyear >= 1990; modelyear = modelyear-1) {%>
@@ -62,17 +58,21 @@
 						</option>
 						<% } %>
 					</select>
-				</label>
+				</label>				
 				<label>Car price:
-					<input name="item[price]" type="number" min="3000" step="100" value="5000" size="20" required
+					<input name="item[price]" type="number" min="3000" step="100" value="5000" size="10" required
 						placeholder="9,000">
+				</label>
+				<label>List name:
+					<input name="item[name]" type="text" size="40" required
+						placeholder="good condition">
 				</label>
 				<label>Car image:
 					<input name="item[image]" type="url" size="40"
 						placeholder="http://www.image.com/car.jpeg">
 				</label>
 				<label>Car description:
-					<textarea name="item[description]" cols="35" rows="10" 
+					<textarea name="item[description]" cols="40" rows="10" 
 						placeholder="description of the car">
 					</textarea>
 				</label>
