@@ -47,8 +47,15 @@
 					</datalist>
 				</label>
 				<label>Make name:<br> 
-					<input name="item[name]" type="text" required
+					<input name="item[name]" type="text" required list="makenames"
 						placeholder="Ford">
+					<datalist id="makenames">
+						<%  makes.forEach(function(make) { %>
+						<option value="<%=make._id%>">
+						<%=make.name%>
+						</option>
+						<% }); %>
+					</datalist>
 				</label>
 				<label>Make description:
 					<textarea name="item[description]" cols="20" rows="10" 
