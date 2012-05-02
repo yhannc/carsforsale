@@ -3,6 +3,10 @@
 	<head>
 		<title>Cars for Sale: Makes</title>
 		<link rel="stylesheet" href="/style.css">
+		<script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+		<script>
+			$('#selectmake').change(function() { $('#inputmake').val($(this).val()); });
+		</script>
 	</head>
 	<body>
 		<a href="/"><h1>Cars for Sale</h1></a>
@@ -32,9 +36,9 @@
 				<!-- The line above tells the server to treat this as a PUT request. -->
 				<label>Make ID<br>
 					(lowercase letters only, no spaces):<br>
-					<input name="item[id]" type="text" pattern="[a-z]+" required
+					<input id="inputmake" name="item[id]" type="text" pattern="[a-z]+" required
 						placeholder="ford">
-					<select name="item[id]">
+					<select id="selectmake">
 						<%  makes.forEach(function(make) { %>
 						<option value="<%=make._id%>">
 						<%=make._id%>
@@ -43,9 +47,9 @@
 					</select>
 				</label>
 				<label>Make name:<br> 
-					<input name="item[name]" type="text" required
+					<input id="inputmake" name="item[name]" type="text" required
 						placeholder="Ford">
-					<select name="item[name]">
+					<select id="selectmake">
 						<%  makes.forEach(function(make) { %>
 						<option value="<%=make._id%>">
 						<%=make.name%>
