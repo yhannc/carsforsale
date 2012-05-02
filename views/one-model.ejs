@@ -6,9 +6,8 @@
 	</head>
 	<body>
 		<a href="/"><h1>Cars for Sale</h1></a>
-		<dl class="main">
+		<dl>
 			<div itemscope itemtype="http://schema.org/Product/CarModel">
-				<div id="left">
 				<dt>Model name</dt>
 				<dd itemprop="name"><%=model.name%></dd>
 				<dt>Model make</dt>
@@ -19,15 +18,11 @@
 				<dt>Model description</dt>
 				<dd itemprop="description"><%=model.description%></dd>
 				<% } %>
-				</div>
-				<div id="right">
 				<% if (model.image) { %>
 				<dt>Model image</dt>
 				<dd itemprop="image"><img src="<%=model.image%>" alt="<%=model.name%>" width="230" height="153"></dd>
 				<% } %>
-				</div>
 			</div>
-			<footer>
 			<dt>Cars</dt>
 			<dd>
 				<% if (cars.length > 0) { %>
@@ -44,7 +39,6 @@
 				No cars have been added.
 				<% } %>
 			</dd>
-			</footer>
 		</dl>
 		<div class="control">
 			<h2>Add a new used car for sale</h2>
