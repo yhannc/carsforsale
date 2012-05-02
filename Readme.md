@@ -4,7 +4,7 @@ README
 ID attribute values
 -------------------
 
-- *cars*
+- **cars**
 	
 	Applied to a `div` tag. The list of cars in this representation. This 
 	list may contain only one car.
