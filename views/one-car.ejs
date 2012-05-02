@@ -6,17 +6,21 @@
 	</head>
 	<body>
 		<a href="/"><h1>Cars for Sale</h1></a>
-		<dl itemscope itemtype="http://schema.org/Product/Car">
-			<dt>Car name</dt>
-			<dd itemprop="name"><%=car.name%></dd>
-			<dt>Car model</dt>
-			<dd itemprop="model"><a href="/models/<%=car.model%>"><%=car.model%></a></dd>
-			<dt>Car model-year</dt>
-			<dd itemprop="modelYear"><%=car.modelyear%></dd>
-			<div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-				<dt>Car price</dt>
-				<dd itemprop="price"><%=car.price%></dd>
+		<dl itemscope itemtype="http://schema.org/Offer">
+			<div itemprop="itemOffered" itemscope itemtype="http://schema.org/Product/Car">
+				<dt>Car name</dt>
+				<dd itemprop="name"><%=car.name%></dd>
+				<dt>Car make</dt>
+				<dd itemprop="manufacturer" itemscope itemtype="http://schema.org/Organization">
+					<span itemprop="name"><a href="/makes/<%=car.make%>"><%=car.make%></a></span>
+				</dd>
+				<dt>Car model</dt>
+				<dd itemprop="model"><a href="/models/<%=car.model%>"><%=car.model%></a></dd>
+				<dt>Car model-year</dt>
+				<dd itemprop="modelYear"><%=car.modelyear%></dd>
 			</div>
+			<dt>Car price</dt>
+			<dd itemprop="price"><%=car.price%></dd>
 			<% if (car.description) { %>
 			<dt>Car description</dt>
 			<dd itemprop="description"><%=car.description%></dd>
