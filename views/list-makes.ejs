@@ -13,7 +13,7 @@
 			<% if (makes.length > 0) { %>
 			<ul class="all">
 				<% makes.forEach(function(make) { %>
-				<li class="make"><a href="/makes/<%=make._id%>"><%=make.name%></a></li>
+				<li class="make"><a rel="make" href="/makes/<%=make._id%>"><%=make.name%></a></li>
 				<% }); %>
 			</ul>
 			<% } else { %>
