@@ -45,20 +45,20 @@
 			<h2>Add a new used car for sale</h2>
 			<form id="create-car" method="post" action="/cars/">
 				<input type="hidden" name="item[model]" value="<%=model._id%>">
-                <input type="hidden" name="item[make]" value="<%=model.make%>">
+				<input type="hidden" name="item[make]" value="<%=model.make%>">
 				<!-- The line above links the car to be created to this model. -->
 				<label>Car name:<br>
 					<input name="item[name]" type="text" required
 						placeholder="good condition">
 				</label>
-                		<label>Car model-year: 
+				<label>Car model-year: 
 					<select name="item[modelyear]" required>
-                        			<% for (var modelyear = 2012; modelyear >= 1990; modelyear = modelyear-1) {%>
-            					<option value="<%=modelyear%>">
-              						<%=modelyear%>
-           	 				</option>
-            					<% } %>
-          				</select>
+						<% for (var modelyear = 2012; modelyear >= 1990; modelyear = modelyear-1) {%>
+						<option value="<%=modelyear%>">
+						<%=modelyear%>
+						</option>
+						<% } %>
+					</select>
 				</label>
 				<label>Car price:<br>
 					<input name="item[price]" type="number" min="3000" step="100" value="5000" required
