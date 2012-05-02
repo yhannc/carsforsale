@@ -7,7 +7,7 @@
 	<body>
 		<a href="/"><h1>Cars for Sale</h1></a>
 		<dl itemscope itemtype="http://schema.org/Offer">
-			<dt>Car name</dt>
+			<dt>List name</dt>
 			<dd itemprop="name"><%=car.name%></dd>
 			<div itemprop="itemOffered" itemscope itemtype="http://schema.org/Product/Car">
 				<dt>Car make</dt>
@@ -19,11 +19,13 @@
 				<dt>Car model-year</dt>
 				<dd itemprop="modelYear"><%=car.modelyear%></dd>
 			</div>
-			<dt>Car price</dt>
+			<dt>List price</dt>
 			<dd itemprop="price"><%=car.price%></dd>
 			<% if (car.description) { %>
 			<dt>Car description</dt>
-			<dd itemprop="description"><%=car.description%></dd>
+			<dd itemprop="description">
+				<%=car.description%>
+			</dd>
 			<% } %>
 			<% if (car.image) { %>
 			<dt>Image</dt>
@@ -61,7 +63,7 @@
 						<% } %>
 					</select>
 				</label>
-				<label>List price:<br> 
+				<label>List price: 
 					<input name="item[price]" value="<%=car.price%>" type="number" min="3000" step="100" required>
 				</label>
 				<label>Car image:
@@ -69,10 +71,9 @@
 						type="url" size="39" placeholder="http://www.carsforsale.com/car.jpg">
 				</label>
 				<label>Car description:
-					<textarea name="item[description]" placeholder="type something :^)"
-						cols="42" rows="10">
-					<%=car.description%>
-					</textarea>
+<textarea name="item[description]"  cols="42" rows="10" placeholder="type something :^)">
+<%=car.description%>
+</textarea>
 				</label>
 				<button>Update</button>
 			</form>
