@@ -142,14 +142,14 @@ Types
 -----
 
 - *Car*
-	Applied to 'car' resource. 
+	Applied to `car` resource. 
 - *CarModel*
-	Applied to 'model' resource.
+	Applied to `model` resource.
 - *Organization*
-	Applied to 'make' resource.
+	Applied to `make` resource.
 	
 Properties
 ----------
 
 - *name*
-	Applied to 'Product/Car' and 'Product/CarModel'.
+	Applied to `Product/Car` and `Product/CarModel`.
