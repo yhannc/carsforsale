@@ -3,6 +3,9 @@
 	<head>
 		<title>Cars for Sale: <%=make.name%></title>
 		<link rel="stylesheet" href="/style.css">
+		<link rel="stylesheet" type="text/css" href="/smoothness/jquery-ui-1.8.20.custom.css">
+		<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+		<script type="text/javascript" src="http://code.jquery.com/ui/1.8.20/jquery-ui.min.js"></script>
 	</head>
 	<body>
 		<a href="/"><h1>Cars for Sale</h1></a>
@@ -42,6 +45,30 @@
 				return true;
 			} 
 			</script>
+			<script>
+			$(function() {
+				var availableids = [
+					<%  models.forEach(function(model) { %>
+					"<%=model._id%>",
+					<% }); %>
+				];
+				$( "#modelids" ).autocomplete({
+					source: availableids
+				});
+			});
+			</script>
+			<script>
+			$(function() {
+				var availablenames = [
+					<%  models.forEach(function(model) { %>
+					"<%=model.name%>",
+					<% }); %>
+				];
+				$( "#modelnames" ).autocomplete({
+					source: availablenames
+				});
+			});
+			</script>
 			<form id="model-add" method="post" action="/models/" 
 				onsubmit="return onFormSubmit(this);">
 				<!-- The line above dynamically sets the PUT destination when the -->
@@ -51,11 +78,19 @@
 				<input type="hidden" name="item[make]" value="<%=make._id%>">
 	    			<label>Model ID:<br>
 					(lowercase letters only, no spaces):<br>
-					<input name="item[id]" type="text" required 
+					<input name="item[id]" type="text" required list="modelids" id="modelids"
 	        				placeholder="escape">
+					<datalist id="modelids">
+					<!--datalist only available for firefox-->
+						<%  models.forEach(function(model) { %>
+						<option value="<%=model._id%>">
+						<%=model._id%>
+						</option>
+						<% }); %>
+					</datalist>
 				</label>
 				<label>Model name:<br>
-					<input name="item[name]" type="text" required 
+					<input name="item[name]" type="text" required list="modelnames" id="modelnames"
 	        				placeholder="Escape">
 				</label>
 				<label>Model image:<br>
