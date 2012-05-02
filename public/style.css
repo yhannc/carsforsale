@@ -30,9 +30,7 @@ dd {
 }
 #left { 
   float:left
-  width:10%
 }
 #right { 
-  float:left
-  width:90%
+  float:right
 }
