@@ -30,28 +30,28 @@
 				} 
 			</script>
 			<script>
-			$(function() {
-				var availableids = [
-					<%  makes.forEach(function(make) { %>
-					"<%=make._id%>",
-					<% }); %>
-				];
-				$( "#makeids" ).autocomplete({
-					source: availableids
+				$(function() {
+					var availableids = [
+						<%  makes.forEach(function(make) { %>
+						"<%=make._id%>",
+						<% }); %>
+					];
+					$( "#makeids" ).autocomplete({
+						source: availableids
+					});
 				});
-			});
 			</script>
 			<script>
-			$(function() {
-				var availablenames = [
-					<%  makes.forEach(function(make) { %>
-					"<%=make.name%>",
-					<% }); %>
-				];
-				$( "#makenames" ).autocomplete({
-					source: availablenames
+				$(function() {
+					var availablenames = [
+						<%  makes.forEach(function(make) { %>
+						"<%=make.name%>",
+						<% }); %>
+					];
+					$( "#makenames" ).autocomplete({
+						source: availablenames
+					});
 				});
-			});
 			</script>
 			<form id="make-add/update" method="post" action="/makes/" 
 				onsubmit="return onFormSubmit(this);" autocomplete="on">
@@ -61,7 +61,7 @@
 				<!-- The line above tells the server to treat this as a PUT request. -->
 				<label>Make ID:<br>(lowercase letters only, no spaces):<br>
 					<input name="item[id]" type="text" pattern="[a-z]+" required id="makeids"
-						placeholder="ford" list="makeids">
+						placeholder="ford (or type to select)" list="makeids">
 					<!--datalist tag is only available for firefox-->		
 					<datalist id="makeids">
 						<%  makes.forEach(function(make) { %>
@@ -72,10 +72,10 @@
 				</label>
 				<label>Make name:<br> 
 					<input name="item[name]" type="text" required id="makenames"
-						placeholder="Ford">
+						placeholder="Ford (or type to select)">
 				</label>
 				<label>Make description:
-					<textarea name="item[description]" placeholder="type something"
+					<textarea name="item[description]" placeholder="type something :^)"
 						 cols="40" rows="10">
 					</textarea>
 				</label>
