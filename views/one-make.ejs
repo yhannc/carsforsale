@@ -78,19 +78,20 @@
 				<input type="hidden" name="item[make]" value="<%=make._id%>">
 	    			<label>Model ID:<br>
 					(lowercase letters only, no spaces):<br>
-					<input name="item[id]" type="text" required list="modelids" id="modelids"
+					<input name="item[id]" type="text" required id="modelids" list="modelids"
 	        				placeholder="escape">
+					<!--datalist tag is only available for firefox-->
 					<datalist id="modelids">
-					<!--datalist only available for firefox-->
 						<%  models.forEach(function(model) { %>
 						<option value="<%=model._id%>">
 						<%=model._id%>
 						</option>
 						<% }); %>
 					</datalist>
+					<!--datalist tag is only available for firefox-->
 				</label>
 				<label>Model name:<br>
-					<input name="item[name]" type="text" required list="modelnames" id="modelnames"
+					<input name="item[name]" type="text" required id="modelnames"
 	        				placeholder="Escape">
 				</label>
 				<label>Model image:<br>
