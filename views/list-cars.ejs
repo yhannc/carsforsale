@@ -10,7 +10,11 @@
 			<% if (items.length > 0) { %>
 			<ul class="all">
 				<% items.forEach(function(item) { %>
-				<li class="car"><a rel="car" href="/cars/<%=item._id%>"><%=item.name%></a></li>
+				<li class="car">
+					<a rel="car" href="/cars/<%=item._id%>">
+						<%=item.name%>
+					</a>
+				</li>
 				<% }); %>
 			</ul>
 			<% } else { %>
