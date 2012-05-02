@@ -9,15 +9,17 @@
 	</head>
 	<body>
 		<a href="/"><h1>Cars for Sale</h1></a>
-		<% if (makes.length > 0) { %>
-		<ul>
-			<% makes.forEach(function(make) { %>
-			<li><a href="/makes/<%=make._id%>"><%=make.name%></a></li>
-			<% }); %>
-		</ul>
-		<% } else { %>
-		<div>No makes have been added.</div>
-		<% } %>
+		<div id="makes">
+			<% if (makes.length > 0) { %>
+			<ul>
+				<% makes.forEach(function(make) { %>
+				<li><a href="/makes/<%=make._id%>"><%=make.name%></a></li>
+				<% }); %>
+			</ul>
+			<% } else { %>
+			No makes have been added.
+			<% } %>
+		</div>
 		<div class="control">
 			<h2>Add or update a new make</h2>
 			<script>
