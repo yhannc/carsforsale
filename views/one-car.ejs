@@ -52,7 +52,7 @@
 				<label>Car model:
 					<select name="item[model]" required>
 						<%  models.forEach(function(model) { %>
-						<option value="<%=model._id%>" <% if (model.name === car.model) { %>selected<% } %>>
+						<option value="<%=model._id%>" <% if (model._id === car.model) { %>selected<% } %>>
 							<%=model.name%>
 						</option>
 						<% }); %>
