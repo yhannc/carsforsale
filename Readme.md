@@ -126,7 +126,8 @@ Class attribute values
 Name attribute values
 ---------------------
 
-- *car*
+- **car**
+	
 	Applied to an `input[text]` element. The name of a car.
 - *description*
 	Applied to a `textarea` element. The description of the car.
