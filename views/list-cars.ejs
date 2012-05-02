@@ -8,7 +8,7 @@
 		<a href="/"><h1>Cars for Sale</h1></a>
 		<div id="cars">
 			<% if (items.length > 0) { %>
-			<ul class="cars">
+			<ul class="all">
 				<% items.forEach(function(item) { %>
 				<li class="car"><a href="/cars/<%=item._id%>"><%=item.name%></a></li>
 				<% }); %>
