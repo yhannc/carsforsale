@@ -85,9 +85,7 @@
 					<!--datalist tag is only available for firefox-->
 					<datalist id="modelids">
 						<%  models.forEach(function(model) { %>
-						<option value="<%=model._id%>">
-						<%=model._id%>
-						</option>
+						<option value="<%=model._id%>"><%=model._id%></option>
 						<% }); %>
 					</datalist>
 					<!--datalist tag is only available for firefox-->
@@ -97,12 +95,12 @@
 	        				placeholder="Escape">
 				</label>
 				<label>Model image:<br>
-					<input name="item[image]" type="url" size="40"
+					<input name="item[image]" type="url" size="43"
 						placeholder="http://www.image.com/model.jpg">
 				</label>
 				<label>Model description:
-					<textarea name="item[description]" cols="40" rows="10" 
-						placeholder="description of the model">
+					<textarea name="item[description]" placeholder="type something :^)"
+						cols="40" rows="10">
 					</textarea>
 				</label>
 				<button>Add or update</button>
