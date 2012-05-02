@@ -16,7 +16,23 @@ ID attribute values
 	
 	Applied to a `div` tag. The list of models in this representation. 
 	This list may contain only one model.
+- **makeids**
 
+	Applied to a `input` tag that can be retrieved by client-side 
+	`autocomplete` javascript.
+- **makenames**
+
+	Applied to a `input` tag that can be retrieved by client-side 
+	`autocomplete` javascript.
+- **modelids**
+
+	Applied to a `input` tag that can be retrieved by client-side 
+	`autocomplete` javascript.
+- **modelnames**
+
+	Applied to a `input` tag that can be retrieved by client-side 
+	`autocomplete` javascript.
+	
 Class attribute values
 ----------------------
 
