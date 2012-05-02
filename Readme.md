@@ -20,7 +20,8 @@ ID attribute values
 Class attribute values
 ----------------------
 
-- *all*
+- **all**
+	
 	Applied to a `ul` tag. A list representation. When this element is a 
 	descendant of `div.id="makes"` it may have one or more 
 	`li.class="make"` descendant elements. When this element is a 
