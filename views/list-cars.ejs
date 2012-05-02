@@ -24,9 +24,7 @@
 					<select name="make">
 						<option value="">choose...</option>	
 						<%  makes.forEach(function(make) { %>
-						<option value="<%=make%>">
-						<%=make%>
-						</option>
+						<option value="<%=make%>"><%=make%></option>
 						<% }); %>
 					</select>
 				</label>				
@@ -34,9 +32,7 @@
 					<select name="model">
 						<option value="">choose...</option>
 						<%  models.forEach(function(model) { %>
-						<option value="<%=model%>">
-						<%=model%>
-						</option>
+						<option value="<%=model%>"><%=model%></option>
 						<% }); %>
 					</select>
 				</label>
@@ -44,9 +40,7 @@
 					<select name="modelyear">
 						<option value="">choose...</option>
                     				<% for (var modelyear = 2012; modelyear >= 1995; modelyear = modelyear-1) {%>
-						<option value="<%=modelyear%>">
-						<%=modelyear%>
-						</option>
+						<option value="<%=modelyear%>"><%=modelyear%></option>
             					<% } %>
           				</select>
        				</label>
