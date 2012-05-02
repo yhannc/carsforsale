@@ -34,12 +34,7 @@ Class attribute values
 	Applied to an `li` tag. A representation of a single car. It should 
 	contain	the following descendant elements:
 		
-		span.class="car-text"
 		a.rel="car"
-	It may also contain the following descendant elements:
-		
-		img.class="car-image"
-		span.class="description"
 - *car-add*
 	Applied to a `form` tag. A link template to create a new car profile. 
 	The element must be set to `form.method="post"` and should contain 
