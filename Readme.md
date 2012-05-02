@@ -73,6 +73,7 @@ Class attribute values
 	car's profile. The element must be set to `form.method="post"` and 
 	should contain the following descendant elements:
 	
+		input[hidden].name="_method"
 		input[text].name="item[name]"
 		select.name="item[make]"
 		select.name="item[model]"
