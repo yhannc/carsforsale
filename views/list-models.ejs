@@ -6,18 +6,20 @@
 	</head>
 	<body>
 		<a href="/"><h1>Cars for Sale</h1></a>
-		<% if (models.length > 0) { %>
-		<ul>
-			<% models.forEach(function(model) { %>
-			<li><a href="/models/<%=model._id%>"><%=model.name%></a></li>
-			<% }); %>
-		</ul>
-		<% } else { %>
-		<div>No models found.</div>
-		<% } %>
+		<div id="models">
+			<% if (models.length > 0) { %>
+			<ul class="all">
+				<% models.forEach(function(model) { %>
+				<li class="model"><a href="/models/<%=model._id%>"><%=model.name%></a></li>
+				<% }); %>
+			</ul>
+			<% } else { %>
+			No models found.
+			<% } %>
+		</div>
 		<div class="control">
 			<h2>Search for models</h2>
-			<form method="get" action="/models/">
+			<form class="model-search" method="get" action="/models/">
         			<label>Car make: 
 					<select name="make" required>
 						<%  makes.forEach(function(make) { %>
