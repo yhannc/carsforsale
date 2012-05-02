@@ -35,27 +35,21 @@ Class attribute values
 	contain	the following descendant elements:
 
 		a.rel="car"
-- *car-add/update*
+- **car-add/update**
 	
 	Applied to a `form` tag. A link template to create or update a new 
 	car profile.The element must be set to `form.method="post"` and 
 	should contain the following descendant elements:
 		
-		input[text].name="make"
-		input[text].name="model"
-		input[text].name="year"
-		input[text].name="car"
+		input[hidden].name="item[model]"
+		input[hidden].name="item[make]"
+		input[text].name="item[name]"
+		select.name="item[modelyear]"
+		input[number].name="item[price]"
 	It may also contain the following descendant elements:
 
-		input[file].name="image"
-		textarea.name="description"		
-- *car-find*
-	Applied to an `li` tag. A representation of a single car. It should 
-	contain the following descendant elements:
-		`span.class="make-text"`
-		`a.rel="car"`
-- *car-image*
-	Applied to an `img` tag. A reference to an image of the listed car.
+		input[url].name="item[image]"
+		textarea.name="item[description]"		
 - **car-search**
 	
 	Applied to a `form` tag. A link template to search of all the cars. 
@@ -65,8 +59,6 @@ Class attribute values
 		select.name="make"
 		select.name="model"
 		select.name="modelyear"
-- *car-text*
-	Applied to a `span` tag. The name of the listed car.
 - **car-update**
 
 	Applied to a `form` tag. A link template to update the designated 
@@ -83,17 +75,15 @@ Class attribute values
 		
 		input[url].name="item[image]"
 		textarea.name="item[description]"
-- *control*
+- **control**
+	
 	Applied to a `div` tag. Add, update or search resources.
-- *description*
-	Applied to a `span` tag. Contains the text description of a car.
-- *make*
+- **make**
+	
 	Applied to an `li` tag. A representation of a single make. It should 
 	contain the following descendant elements:
-		`span.class="make-text"`
-		`a.rel="make"`
-- *make-text*
-	Applied to a `span` tag. The name of a car make.
+
+		a.rel="make"
 - *model*
 	Applied to an `li` tag. A representation of a single model. It should 
 	contain the following descendant elements:
@@ -101,8 +91,8 @@ Class attribute values
 		`a.rel="model"`
 - **model-add/update**
 
-	Applied to a `form` tag. A link template to update the designated 
-	car's profile. The element must be set to `form.method="post"` and 
+	Applied to a `form` tag. A link template to create or update a new 
+	model profile.The element must be set to `form.method="post"` and 
 	should contain the following descendant elements:
 	
 		input[hidden].name="_method"
