@@ -29,12 +29,15 @@ Class attribute values
 	`li.class="model"` descendant elements. When this element is a 
 	descendant of `div.id="cars"` it may have one or more `li.class="car"` 
 	descendant elements.
-- *car*
+- **car**
+	
 	Applied to an `li` tag. A representation of a single car. It should 
 	contain	the following descendant elements:
+		
 		`span.class="car-text"`
 		`a.rel="car"`
 	It may also contain the following descendant elements:
+		
 		`img.class="car-image"`
 		`span.class="description"`
 - *car-add*
