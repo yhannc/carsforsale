@@ -3,9 +3,7 @@
 	<head>
 		<title>Cars for Sale: Makes</title>
 		<link rel="stylesheet" href="/style.css">
-		<link rel="stylesheet" href="/jquery.autocomplete.css">
 		<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
-		<script type="text/javascript" src="/jquery.autocomplete.js"></script>
 	</head>
 	<body>
 		<a href="/"><h1>Cars for Sale</h1></a>
@@ -35,20 +33,18 @@
 				<!-- The line above tells the server to treat this as a PUT request. -->
 				<label>Make ID<br>
 					(lowercase letters only, no spaces):<br>
-					<script type="text/javascript">
-						$("#suggestmake1").autocomplete(makes {
-							multiple: true,
-							mustMatch: true,
-							autoFill: true
-						});
-						$('#suggestmake2').autocomplete(makes {
-							multiple: true,
-							mustMatch: true,
-							autoFill: true
-						});
+					<script>
+						$("#selectmake").change(function() { $("#inputmake").val($(this).val()); });
 					</script>
-					<input id="suggestmake1" name="item[id]" type="text" pattern="[a-z]+" required
-						placeholder="type something">
+					<input id="inputmake" name="item[id]" type="text" pattern="[a-z]+" required
+						placeholder="ford">
+					<select id="selectmake">
+						<%  makes.forEach(function(make) { %>
+						<option value="<%=make._id%>">
+						<%=make.id%>
+						</option>
+						<% }); %>
+					</select>
 				</label>
 				<label>Make name:<br> 
 					<input id="inputmake" name="item[name]" type="text" required
