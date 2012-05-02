@@ -1,6 +1,6 @@
 .main {
   margin: 0px;
-  padding: 10px;
+  padding: 5px;
 }
 .control {
   border: 1px solid gray;
@@ -14,7 +14,7 @@ label, textarea, button {
   display: block;  
 }
 input, select {
-  display：float;
+  display: float;
 }
 label {
   padding-top: 10px; 
@@ -29,8 +29,8 @@ dd {
   margin: 0 0 10px 0;
 }
 #left { 
-  float:left
+  float: left
 }
 #right { 
-  float:right
+  float: right
 }
