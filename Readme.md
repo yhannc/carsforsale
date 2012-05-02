@@ -107,16 +107,16 @@ Name attribute values
 - *description*
 	Applied to a `textarea` element. The description of the car.
 - *image*
-	Applied to an `input[file]` element. The image for the car.
+	Applied to an `input[image]` element. The image for the car.
 - *make*
-	Applied to an `input[text]` element. The search value to use when 
-	searching makes.
+	Applied to an `select[text]` element. The search value to use when 
+	searching models or cars.
 - *model*
-	Applied to an `input[text]` element. The search value to use when 
-	searching models.
-- *year*
-	Applied to an `input[text]` element. The search value to use when 
-	searching years.
+	Applied to an `select[text]` element. The search value to use when 
+	searching cars.
+- *modelyear*
+	Applied to an `select[text]` element. The search value to use when 
+	searching cars.
 
 Rel attribute values
 --------------------
