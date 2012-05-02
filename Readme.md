@@ -55,7 +55,9 @@ Class attribute values
 	Applied to a `form` tag. A link template to search of all the cars. 
 	The element must be set to `form.method="get"` and should contain 
 	the following descendant elements:
-		`input[text].name="search"`
+		`select.name="make"`
+		`select.name="model"`
+		`select.name="modelyear"`
 - *car-text*
 	Applied to a `span` tag. The name of the listed car.
 - *car-update*
@@ -109,13 +111,13 @@ Name attribute values
 - *image*
 	Applied to an `input[image]` element. The image for the car.
 - *make*
-	Applied to an `select[text]` element. The search value to use when 
+	Applied to an `select` element. The search value to use when 
 	searching models or cars.
 - *model*
-	Applied to an `select[text]` element. The search value to use when 
+	Applied to an `select` element. The search value to use when 
 	searching cars.
 - *modelyear*
-	Applied to an `select[text]` element. The search value to use when 
+	Applied to an `select` element. The search value to use when 
 	searching cars.
 
 Rel attribute values
