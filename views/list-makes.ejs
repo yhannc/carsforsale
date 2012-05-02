@@ -30,14 +30,21 @@
 				} 
 			</script>
 			<form id="make-add/update" method="post" action="/makes/" 
-				onsubmit="return onFormSubmit(this);">
+				onsubmit="return onFormSubmit(this);" autocomplete="on">
 				<!-- The line above dynamically sets the PUT destination when the -->
 				<!-- form is submitted. -------------------------------------------->
 				<input type="hidden" name="_method" value="put">
 				<!-- The line above tells the server to treat this as a PUT request. -->
 				<label>Make ID:<br>(lowercase letters only, no spaces):<br>
-					<input name="item[id]" type="text" required
+					<input name="item[id]" type="text" required list="makeids"
 						placeholder="ford">
+					<datalist id="makeids">
+						<%  makes.forEach(function(make) { %>
+						<option value="<%=make._id%>">
+						<%=make._id%>
+						</option>
+						<% }); %>
+					</datalist>
 				</label>
 				<label>Make name:<br> 
 					<input name="item[name]" type="text" required
