@@ -33,7 +33,7 @@ Class attribute values
 	
 	Applied to an `li` tag. A representation of a single car. It should 
 	contain	the following descendant elements:
-		
+
 		a.rel="car"
 - *car-add/update*
 	
@@ -42,13 +42,13 @@ Class attribute values
 	should contain the following descendant elements:
 		
 		input[text].name="make"
-		`input[text].name="model"`
-		`input[text].name="year"`
-		`input[text].name="car"`
+		input[text].name="model"
+		input[text].name="year"
+		input[text].name="car"
 	It may also contain the following descendant elements:
 
-		input[file].name="image"`
-		`textarea.name="description"`		
+		input[file].name="image"
+		textarea.name="description"		
 - *car-find*
 	Applied to an `li` tag. A representation of a single car. It should 
 	contain the following descendant elements:
@@ -67,7 +67,8 @@ Class attribute values
 		select.name="modelyear"
 - *car-text*
 	Applied to a `span` tag. The name of the listed car.
-- *car-update*
+- **car-update**
+
 	Applied to a `form` tag. A link template to update the designated 
 	car's profile. The element must be set to `form.method="post"` and 
 	should contain 	the following descendant elements:
