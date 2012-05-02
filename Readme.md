@@ -84,11 +84,24 @@ Class attribute values
 	contain the following descendant elements:
 
 		a.rel="make"
-- *model*
+- **make-add/update**
+
+	Applied to a `form` tag. A link template to create or update a new 
+	make profile.The element must be set to `form.method="post"` and 
+	should contain the following descendant elements:
+	
+		input[hidden].name="_method"
+		input[text].name="item[id]"
+		input[text].name="item[name]"
+	It may also contain the following descendant elements:
+		
+		textarea.name="item[description]"
+- **model**
+	
 	Applied to an `li` tag. A representation of a single model. It should 
 	contain the following descendant elements:
-		`span.class="model-text"`
-		`a.rel="model"`
+
+		a.rel="model"
 - **model-add/update**
 
 	Applied to a `form` tag. A link template to create or update a new 
@@ -109,19 +122,6 @@ Class attribute values
 	the following descendant elements:
 		
 		select.name="make"
-- *model-text*
-	Applied to a `span` tag. The name of a car model.
-- *single*
-	When this element is a descendant of `div.id="cars"` it contains the 
-	car selected via a car link. Should have a single `li.class=""car` 
-	descendant element.
-- *year*
-	Applied to an `li` tag. A representation of a single year. It should 
-	contain the following descendant elements:
-		`span.class="year-text"`
-		`a.rel="year"`
-- *year-text*
-	Applied to a `span` tag. The name of a particular year.
 
 Name attribute values
 ---------------------
