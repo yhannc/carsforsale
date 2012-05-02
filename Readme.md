@@ -137,3 +137,19 @@ Rel attribute values
 	Applied to an `a` tag. A reference to a year representation.
 - *years*
 	Applied to an `a` tag. A reference to a list of years representation.
+
+Types
+-----
+
+- *Car*
+	Applied to 'car' resource. 
+- *CarModel*
+	Applied to 'model' resource.
+- *Organization*
+	Applied to 'make' resource.
+	
+Properties
+----------
+
+- *name*
+	Applied to 'Product/Car' and 'Product/CarModel'.
