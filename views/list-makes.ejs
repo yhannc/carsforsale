@@ -31,17 +31,28 @@
 			</script>
 			<script>
 			$(function() {
-				var availableTags = [
+				var availableids = [
 					<%  makes.forEach(function(make) { %>
 					"<%=make._id%>",
 					<% }); %>
 				];
-				$( "#tags" ).autocomplete({
-					source: availableTags
+				$( "#makeids" ).autocomplete({
+					source: availableids
 				});
 			});
 			</script>
-
+			<script>
+			$(function() {
+				var availablenames = [
+					<%  makes.forEach(function(make) { %>
+					"<%=make.name%>",
+					<% }); %>
+				];
+				$( "#makenames" ).autocomplete({
+					source: availablenames
+				});
+			});
+			</script>
 			<form id="make-add/update" method="post" action="/makes/" 
 				onsubmit="return onFormSubmit(this);" autocomplete="on">
 				<!-- The line above dynamically sets the PUT destination when the -->
@@ -50,7 +61,7 @@
 				<!-- The line above tells the server to treat this as a PUT request. -->
 				<label>Make ID:<br>(lowercase letters only, no spaces):<br>
 					<input name="item[id]" type="text" required list="makeids"
-						placeholder="ford" id="tags">
+						placeholder="ford" id="makeids">
 					<datalist id="makeids">
 						<%  makes.forEach(function(make) { %>
 						<option value="<%=make._id%>">
@@ -61,7 +72,7 @@
 				</label>
 				<label>Make name:<br> 
 					<input name="item[name]" type="text" required list="makenames"
-						placeholder="Ford">
+						placeholder="Ford" id="makenames">
 					<datalist id="makenames">
 						<%  makes.forEach(function(make) { %>
 						<option value="<%=make._id%>">
