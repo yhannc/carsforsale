@@ -126,26 +126,31 @@ Class attribute values
 Name attribute values
 ---------------------
 
-- **car**
+- **item[description]**
 	
-	Applied to an `input[text]` element. The name of a car.
-- **description**
+	Applied to a `textarea` element. The description of a make,
+	model, or car.
+- **item[id]**
 	
-	Applied to a `textarea` element. The description of the car.
+	Applied to an `input[text]` element. The id of a make, model,
+	or car.
 - **image**
 	
 	Applied to an `input[image]` element. The image for the car.
+- **item[]**
+	
+	Applied to an `input[text]` element. The name of a car.
 - **make**
 	
-	Applied to an `select` element. The search value to use when 
+	Applied to a `select` element. The search value to use when 
 	searching models or cars.
 - **model**
 	
-	Applied to an `select` element. The search value to use when 
+	Applied to a `select` element. The search value to use when 
 	searching cars.
 - **modelyear**
 	
-	Applied to an `select` element. The search value to use when 
+	Applied to a `select` element. The search value to use when 
 	searching cars.
 
 Rel attribute values
