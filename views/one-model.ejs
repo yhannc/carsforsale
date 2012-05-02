@@ -53,9 +53,7 @@
 				<label>Car model-year: 
 					<select name="item[modelyear]" required>
 						<% for (var modelyear = 2012; modelyear >= 1990; modelyear = modelyear-1) {%>
-						<option value="<%=modelyear%>">
-						<%=modelyear%>
-						</option>
+						<option value="<%=modelyear%>"><%=modelyear%></option>
 						<% } %>
 					</select>
 				</label>				
@@ -72,8 +70,8 @@
 						placeholder="http://www.image.com/car.jpeg">
 				</label>
 				<label>Car description:
-					<textarea name="item[description]" cols="42" rows="10" 
-						placeholder="description of the car">
+					<textarea name="item[description]" placeholder="tell us about your car :^)"
+						cols="42" rows="10">
 					</textarea>
 				</label>
 				<button>Add</button>
