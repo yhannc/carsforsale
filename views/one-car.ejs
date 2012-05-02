@@ -7,9 +7,9 @@
 	<body>
 		<a href="/"><h1>Cars for Sale</h1></a>
 		<dl itemscope itemtype="http://schema.org/Offer">
+			<dt>Car name</dt>
+			<dd itemprop="name"><%=car.name%></dd>
 			<div itemprop="itemOffered" itemscope itemtype="http://schema.org/Product/Car">
-				<dt>Car name</dt>
-				<dd itemprop="name"><%=car.name%></dd>
 				<dt>Car make</dt>
 				<dd itemprop="manufacturer" itemscope itemtype="http://schema.org/Organization">
 					<span itemprop="name"><a href="/makes/<%=car.make%>"><%=car.make%></a></span>
