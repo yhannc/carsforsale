@@ -60,7 +60,7 @@
 				<input type="hidden" name="_method" value="put">
 				<!-- The line above tells the server to treat this as a PUT request. -->
 				<label>Make ID:<br>(lowercase letters only, no spaces):<br>
-					<input name="item[id]" type="text" required list="makeids" id="makeids"
+					<input name="item[id]" type="text" required id="makeids" list="makeids"
 						placeholder="ford">
 					<!--datalist tag is only available for firefox-->		
 					<datalist id="makeids">
@@ -73,15 +73,8 @@
 					<!--datalist tag is only available for firefox-->
 				</label>
 				<label>Make name:<br> 
-					<input name="item[name]" type="text" required list="makenames" id="makenames"
+					<input name="item[name]" type="text" required id="makenames"
 						placeholder="Ford">
-					<datalist id="makenames">
-						<%  makes.forEach(function(make) { %>
-						<option value="<%=make._id%>">
-						<%=make.name%>
-						</option>
-						<% }); %>
-					</datalist>
 				</label>
 				<label>Make description:
 					<textarea name="item[description]" cols="20" rows="10" 
