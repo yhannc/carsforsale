@@ -8,18 +8,6 @@
 		<script type="text/javascript" src="/jquery.autocomplete.js"></script>
 	</head>
 	<body>
-		<script type="text/javascript">
-			$("#suggestmake1").autocomplete(makes {
-				multiple: true,
-				mustMatch: true,
-				autoFill: true
-			});
-			$('#suggestmake2').autocomplete(makes {
-				multiple: true,
-				mustMatch: true,
-				autoFill: true
-			});
-		</script>
 		<a href="/"><h1>Cars for Sale</h1></a>
 		<% if (makes.length > 0) { %>
 		<ul>
@@ -47,6 +35,18 @@
 				<!-- The line above tells the server to treat this as a PUT request. -->
 				<label>Make ID<br>
 					(lowercase letters only, no spaces):<br>
+					<script type="text/javascript">
+						$("#suggestmake1").autocomplete(makes {
+							multiple: true,
+							mustMatch: true,
+							autoFill: true
+						});
+						$('#suggestmake2').autocomplete(makes {
+							multiple: true,
+							mustMatch: true,
+							autoFill: true
+						});
+					</script>
 					<input id="suggestmake1" name="item[id]" type="text" pattern="[a-z]+" required
 						placeholder="type something">
 				</label>
