@@ -37,46 +37,40 @@
     			<form id="car-update" method="post" action="/cars/<%=car._id%>">
         			<input type="hidden" name="_method" value="put">
         			<!-- The line above tells the server to treat this as a PUT request. -->
-				<label>Car name:<br> 
-					<input name="item[name]" value="<%=car.name%>" type="text" required>
+				<label>List name: 
+					<input name="item[name]" value="<%=car.name%>" type="text" size="40" required>
 				</label>
 				<label>Car make:
 					<select name="item[make]" required>
 						<%  makes.forEach(function(make) { %>
-						<option value="<%=make%>" <% if (make === car.make) { %>selected<% } %>>
-							<%=make%>
-						</option>
+						<option value="<%=make%>" <% if (make === car.make) { %>selected<% } %>><%=make%></option>
 						<% }); %>
 					</select>
 				</label>
 				<label>Car model:
 					<select name="item[model]" required>
 						<%  models.forEach(function(model) { %>
-						<option value="<%=model._id%>" <% if (model._id === car.model) { %>selected<% } %>>
-							<%=model.name%>
-						</option>
+						<option value="<%=model._id%>" <% if (model._id === car.model) { %>selected<% } %>><%=model.name%></option>
 						<% }); %>
 					</select>
 				</label>
 				<label>Car model-year:       				   
 					<select name="item[modelyear]" required>
 						<% for (var modelyear = 2012; modelyear >= 1995; modelyear = modelyear-1) {%>
-						<option value="<%=modelyear%>" <% if (modelyear === Number(car.modelyear)) { %>selected<% } %>>
-							<%=modelyear%>
-						</option>
+						<option value="<%=modelyear%>" <% if (modelyear === Number(car.modelyear)) { %>selected<% } %>><%=modelyear%></option>
 						<% } %>
 					</select>
 				</label>
-				<label>Car price:<br> 
+				<label>List price:<br> 
 					<input name="item[price]" value="<%=car.price%>" type="number" min="3000" step="100" required>
 				</label>
-				<label>Car image:<br>
+				<label>Car image:
 					<input name="item[image]" value="<%=car.image%>" 
-						type="url" size="40" placeholder="http://www.image.com/car.jpeg">
+						type="url" size="39" placeholder="http://www.carsforsale.com/car.jpg">
 				</label>
 				<label>Car description:
-					<textarea name="item[description]" cols="40" rows="10" 
-						placeholder="description of the car">
+					<textarea name="item[description]" placeholder="type something :^)"
+						cols="42" rows="10">
 					<%=car.description%>
 					</textarea>
 				</label>
