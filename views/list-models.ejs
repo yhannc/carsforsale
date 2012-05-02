@@ -10,7 +10,7 @@
 			<% if (models.length > 0) { %>
 			<ul class="all">
 				<% models.forEach(function(model) { %>
-				<li class="model"><a href="/models/<%=model._id%>"><%=model.name%></a></li>
+				<li class="model"><a rel="model" href="/models/<%=model._id%>"><%=model.name%></a></li>
 				<% }); %>
 			</ul>
 			<% } else { %>
