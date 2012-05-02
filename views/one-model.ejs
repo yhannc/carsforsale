@@ -6,9 +6,9 @@
 	</head>
 	<body>
 		<a href="/"><h1>Cars for Sale</h1></a>
-		<div class="main">
 		<dl>
-			<div id="left" itemscope itemtype="http://schema.org/Product/CarModel">
+			<div itemscope itemtype="http://schema.org/Product/CarModel">
+				<div id="left">
 				<dt>Model name</dt>
 				<dd itemprop="name"><%=model.name%></dd>
 				<dt>Model make</dt>
@@ -19,12 +19,14 @@
 				<dt>Model description</dt>
 				<dd itemprop="description"><%=model.description%></dd>
 				<% } %>
+				</div>
+				<div id="right">
 				<% if (model.image) { %>
 				<dt>Model image</dt>
 				<dd itemprop="image"><img src="<%=model.image%>" alt="<%=model.name%>" width="230" height="153"></dd>
 				<% } %>
+				</div>
 			</div>
-			<div id="right">
 			<dt>Cars</dt>
 			<dd>
 				<% if (cars.length > 0) { %>
@@ -43,7 +45,6 @@
 			</dd>
 			</div>
 		</dl>
-		</div>
 		<div class="control">
 			<h2>Add a new used car for sale</h2>
 			<form id="car-add/update" method="post" action="/cars/">
