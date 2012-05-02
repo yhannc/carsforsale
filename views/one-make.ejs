@@ -36,14 +36,14 @@
 		<div class="control">
 			<h2>Add or update a car model</h2>
 			<script>
-			function onFormSubmit(form) {
+				function onFormSubmit(form) {
 				form.action = form.action + form.elements['item[id]'].value;
 				console.log(form.action);
 				return true;
 			} 
 			</script>
 			<form id="create-model" method="post" action="/models/" 
-    				onsubmit="return onFormSubmit(this);">
+				onsubmit="return onFormSubmit(this);">
 				<!-- The line above dynamically sets the PUT destination when the -->
 				<!-- form is submitted. -------------------------------------------->
 				<input type="hidden" name="_method" value="put">
