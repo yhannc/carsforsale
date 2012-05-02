@@ -71,15 +71,16 @@ Class attribute values
 
 	Applied to a `form` tag. A link template to update the designated 
 	car's profile. The element must be set to `form.method="post"` and 
-	should contain 	the following descendant elements:
+	should contain the following descendant elements:
 	
-		`input[text].name="make"`
-		`input[text].name="model"`
-		`input[text].name="year"`
-		`input[text].name="car"`
+		input[text].name="item[name]"
+		select.name="item[make]"
+		select.name="item[model]"
+		select.name="item[modelyear]"
+		input[number].name="item[price]"
 	It may also contain the following descendant elements:
-		`input[file].name="image"`
-		`textarea.name="description"`
+		input[url].name="item[image]"
+		textarea.name="item[description]"
 - *control*
 	Applied to a `div` tag. Add, update or search resources.
 - *description*
