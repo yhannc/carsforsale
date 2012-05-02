@@ -7,7 +7,7 @@
 	<body>
 		<a href="/"><h1>Cars for Sale</h1></a>
 		<dl itemscope itemtype="http://schema.org/Offer">
-			<dt>List name</dt>
+			<dt>List title</dt>
 			<dd itemprop="name"><%=car.name%></dd>
 			<div itemprop="itemOffered" itemscope itemtype="http://schema.org/Product/Car">
 				<dt>Car make</dt>
@@ -39,9 +39,6 @@
     			<form id="car-update" method="post" action="/cars/<%=car._id%>">
         			<input type="hidden" name="_method" value="put">
         			<!-- The line above tells the server to treat this as a PUT request. -->
-				<label>List name: 
-					<input name="item[name]" value="<%=car.name%>" type="text" size="40" required>
-				</label>
 				<label>Car make:
 					<select name="item[make]" required>
 						<%  makes.forEach(function(make) { %>
@@ -62,6 +59,9 @@
 						<option value="<%=modelyear%>" <% if (modelyear === Number(car.modelyear)) { %>selected<% } %>><%=modelyear%></option>
 						<% } %>
 					</select>
+				</label>
+				<label>List title: 
+					<input name="item[name]" value="<%=car.name%>" type="text" size="39" required>
 				</label>
 				<label>List price: 
 					<input name="item[price]" value="<%=car.price%>" type="number" min="3000" step="100" required>
