@@ -99,6 +99,19 @@ Class attribute values
 	contain the following descendant elements:
 		`span.class="model-text"`
 		`a.rel="model"`
+- **model-add/update**
+
+	Applied to a `form` tag. A link template to update the designated 
+	car's profile. The element must be set to `form.method="post"` and 
+	should contain the following descendant elements:
+	
+		input[hidden].name="_method"
+		input[text].name="item[id]"
+		input[text].name="item[name]"
+	It may also contain the following descendant elements:
+		
+		input[url].name="item[image]"
+		textarea.name="item[description]"
 - **model-search**
 	
 	Applied to a `form` tag. A link template to search of all the models. 
