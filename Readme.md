@@ -52,7 +52,7 @@ Class attribute values
 - **car**
 
 	Applied to an `li` tag. A representation of a single car. It should 
-	contain	the following descendant elements:
+	contain	the following descendant element:
 
 		a.rel="car"
 - **car-add/update**
@@ -101,7 +101,7 @@ Class attribute values
 - **make**
 
 	Applied to an `li` tag. A representation of a single make. It should 
-	contain the following descendant elements:
+	contain the following descendant element:
 
 		a.rel="make"
 - **make-add/update**
@@ -113,13 +113,13 @@ Class attribute values
 		input[hidden].name="_method"
 		input[text].name="item[id]"
 		input[text].name="item[name]"
-	It may also contain the following descendant elements:
+	It may also contain the following descendant element:
 		
 		textarea.name="item[description]"
 - **model**
 
 	Applied to an `li` tag. A representation of a single model. It should 
-	contain the following descendant elements:
+	contain the following descendant element:
 
 		a.rel="model"
 - **model-add/update**
@@ -211,8 +211,8 @@ Microdata types and properties
 
 	Applied to `one-car.ejs`. `Car` type should contain attibutes 
 	`itemscope` and
-	[`itemtype="http://schema.org/Product/Car"`](http://schema.org/Product)
-	It should contain the following properties:
+	[`itemtype="http://schema.org/Product/Car"`](http://schema.org/Product).
+	It should contain the following descendant properties:
 
 		itemprop="manufacturer" (refers to type CarMake)
 		itemprop="model"
@@ -222,23 +222,23 @@ Microdata types and properties
 
 	Applied to `one-make.ejs`, `one-model.ejs` and `one-car.ejs`. 
 	`CarMake` type should contain attibutes `itemscope` and	
-	[`itemtype="http://schema.org/Organization/CarMake"`](http://schema.org/Organization)
-	It should contain the following property:
+	[`itemtype="http://schema.org/Organization/CarMake"`](http://schema.org/Organization).
+	It should contain the following descendant property:
 
 		itemprop="name"
-	It may also contain the following property:
+	It may also contain the following descendant property:
 	
 		itemprop="description"
 - **CarModel**
 
 	Applied to `one-model.ejs`. `CarModel` type should contain attibutes 
 	`itemscope` and	
-	[`itemtype="http://schema.org/Product/CarModel"`](http://schema.org/Product)
-	It should contain the following properties:
+	[`itemtype="http://schema.org/Product/CarModel"`](http://schema.org/Product).
+	It should contain the following descendant properties:
 
 		itemprop="name"
 		itemprop="manufacturer" (refers to type CarMake)
-	It may also contain the following properties:
+	It may also contain the following descendant properties:
 	
 		itemprop="description"
 		itemprop="image"
@@ -247,13 +247,13 @@ Microdata types and properties
 
 	Applied to `one-car.ejs`. `Offer` type should contain attibutes 
 	`itemscope` and
-	[`itemtype="http://schema.org/Offer"`](http://schema.org/Offer)
-	It should contain the following properties:
+	[`itemtype="http://schema.org/Offer"`](http://schema.org/Offer).
+	It should contain the following descendant properties:
 
 		itemprop="name"
 		itemprop="itemOffered" (refers to type Car)
 		itemprop="price"
-	It may also contain the following properties:
+	It may also contain the following descendant properties:
 	
 		itemprop="description"
 		itemprop="image"
