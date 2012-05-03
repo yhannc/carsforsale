@@ -204,22 +204,23 @@ Rel attribute values
 	
 	Applied to an `a` tag. A reference to a model representation.
 
-Types
------
+Microdata types and properties
+------------------------------
 
 - **Car**
+
+	Applied to type `Offer`
 	
-	Applied to `car` resource. 
+		itemtype="http://schema.org/Product/Car"
+
+- **CarMake**
+	
+	Applied to `one-make.ejs`.
+
+		itemtype="[http://schema.org/Organization/CarMake](http://schema.org/Organization)"
 - **CarModel**
 	
-	Applied to `model` resource.
-- **Organization**
+	Applied to `one-model.ejs`
+- **Offer**
 	
-	Applied to `make` resource.
-	
-Properties
-----------
-
-- **name**
-	
-	Applied to `Product/Car` and `Product/CarModel`.
+	Applied to `one-car.ejs`.   
