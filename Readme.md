@@ -218,7 +218,7 @@ Microdata types and properties
 
 - **CarMake**
 
-	Applied to `one-make.ejs`. `CarMake` type should contain attibutes 
+	Applied to `one-make.ejs` and `one-model.ejs`. `CarMake` type should contain attibutes 
 	`itemscope` and	
 	[`itemtype="http://schema.org/Organization/CarMake"`](http://schema.org/Organization)
 	It should contain the following property:
@@ -234,10 +234,12 @@ Microdata types and properties
 	[`itemtype="http://schema.org/Product/CarModel"`](http://schema.org/Product)
 	It should contain the following properties:
 
-		itemprop="name"
+		`itemprop="name"`
+		itemprop="manufacturer" (refers to `CarMake` type)
 	It may also contain the following properties:
 	
 		itemprop="description"
+		itemprop="image"
 
 - **Offer**
 
