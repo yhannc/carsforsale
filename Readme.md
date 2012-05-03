@@ -219,9 +219,11 @@ Microdata types and properties
 	Applied to `one-make.ejs`. `CarMake` type should contain attibutes 
 	`itemscope` and	
 	[`itemtype="http://schema.org/Organization/CarMake"`](http://schema.org/Organization)
-	It should contain the following properties:
+	It should contain the following property:
 
 		itemprop="name"
+	It may also contain the following property:
+	
 		itemprop="description"
 - **CarModel**
 	
