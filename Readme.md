@@ -209,15 +209,18 @@ Microdata types and properties
 
 - **Car**
 
-	Applied to type `Offer`
+	Applied to `itemprop="itemOffered"`
+	[`itemtype=http://schema.org/Offer`](http://schema.org/Offer)
 	
 		itemtype="http://schema.org/Product/Car"
 
 - **CarMake**
 	
-	Applied to `one-make.ejs`.
+	Applied to `one-make.ejs`. This Microdata type may contain 
+	the following attributes:
 
-		itemtype=["http://schema.org/Organization/CarMake"](http://schema.org/Organization)
+		itemtype="http://schema.org/Organization/CarMake"
+		itemprop=""
 - **CarModel**
 	
 	Applied to `one-model.ejs`
