@@ -207,15 +207,16 @@ Rel attribute values
 Microdata types and properties
 ------------------------------
 
-- **Car**
+- **`Car` type** 
 
+	[`itemtype="http://schema.org/Product/Car"`](http://schema.org/Product)
 	Applied to `itemprop="itemOffered"`
-	[`itemtype=http://schema.org/Offer`](http://schema.org/Offer)
 	
 		itemtype="http://schema.org/Product/Car"
 
 - **CarMake**
 	
+	[`itemtype="http://schema.org/Organization/CarMake"`](http://schema.org/Organization)
 	Applied to `one-make.ejs`. This Microdata type may contain 
 	the following attributes:
 
@@ -223,7 +224,9 @@ Microdata types and properties
 		itemprop=""
 - **CarModel**
 	
+	[`itemtype="http://schema.org/Product/CarModel"`](http://schema.org/Product)	
 	Applied to `one-model.ejs`
 - **Offer**
 	
+	[`itemtype="http://schema.org/Offer"`](http://schema.org/Offer)	
 	Applied to `one-car.ejs`.   
