@@ -207,7 +207,7 @@ Rel attribute values
 Microdata types and properties
 ------------------------------
 
-- **`Car` type** 
+- `**Car type**`
 
 	[`itemtype="http://schema.org/Product/Car"`](http://schema.org/Product)
 	Applied to `itemprop="itemOffered"`
