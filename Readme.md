@@ -212,14 +212,16 @@ Microdata types and properties
 	Applied to `one-car.ejs`. `Car` type should contain attibutes 
 	`itemscope` and
 	[`itemtype="http://schema.org/Product/Car"`](http://schema.org/Product)
-	Applied to `itemprop="itemOffered"`
-	
-		itemtype="http://schema.org/Product/Car"
+	It should contain the following properties:
+
+		itemprop="manufacturer" (refers to type CarMake)
+		itemprop="model"
+		itemprop="modelYear"
 
 - **CarMake**
 
-	Applied to `one-make.ejs` and `one-model.ejs`. `CarMake` type should contain attibutes 
-	`itemscope` and	
+	Applied to `one-make.ejs`, `one-model.ejs` and `one-car.ejs`. 
+	`CarMake` type should contain attibutes `itemscope` and	
 	[`itemtype="http://schema.org/Organization/CarMake"`](http://schema.org/Organization)
 	It should contain the following property:
 
@@ -234,8 +236,8 @@ Microdata types and properties
 	[`itemtype="http://schema.org/Product/CarModel"`](http://schema.org/Product)
 	It should contain the following properties:
 
-		`itemprop="name"`
-		itemprop="manufacturer" (refers to `CarMake` type)
+		itemprop="name"
+		itemprop="manufacturer" (refers to type CarMake)
 	It may also contain the following properties:
 	
 		itemprop="description"
@@ -246,9 +248,12 @@ Microdata types and properties
 	Applied to `one-car.ejs`. `Offer` type should contain attibutes 
 	`itemscope` and
 	[`itemtype="http://schema.org/Offer"`](http://schema.org/Offer)
-	It should contain the following property:
+	It should contain the following properties:
 
 		itemprop="name"
-	It may also contain the following property:
+		itemprop="itemOffered" (refers to type Car)
+		itemprop="price"
+	It may also contain the following properties:
 	
 		itemprop="description"
+		itemprop="image"
