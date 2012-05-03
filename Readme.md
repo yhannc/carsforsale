@@ -217,7 +217,7 @@ Microdata types and properties
 	
 	Applied to `one-make.ejs`.
 
-		itemtype="[http://schema.org/Organization/CarMake](http://schema.org/Organization)"
+		itemtype=[http://schema.org/Organization/CarMake](http://schema.org/Organization)
 - **CarModel**
 	
 	Applied to `one-model.ejs`
