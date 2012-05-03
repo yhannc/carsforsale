@@ -207,7 +207,7 @@ Rel attribute values
 Microdata types and properties
 ------------------------------
 
-- `**Car type**`
+- **Car**
 
 	[`itemtype="http://schema.org/Product/Car"`](http://schema.org/Product)
 	Applied to `itemprop="itemOffered"`
@@ -216,12 +216,13 @@ Microdata types and properties
 
 - **CarMake**
 	
+	Applied to `one-make.ejs`. `CarMake` type should contain attibutes 
+	`itemscope` and	
 	[`itemtype="http://schema.org/Organization/CarMake"`](http://schema.org/Organization)
-	Applied to `one-make.ejs`. This Microdata type may contain 
-	the following attributes:
+	It should contain the following properties:
 
-		itemtype="http://schema.org/Organization/CarMake"
-		itemprop=""
+		itemprop="name"
+		itemprop="description"
 - **CarModel**
 	
 	[`itemtype="http://schema.org/Product/CarModel"`](http://schema.org/Product)	
